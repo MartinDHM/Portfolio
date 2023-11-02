@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "./main.css";
-import Header from "./Components/Header";
+import Header from "./Components/header";
 import Accueil from "./Components/Accueil";
 import Portfolio from "./Components/Portfolio";
 import Contact from "./Components/Contact";

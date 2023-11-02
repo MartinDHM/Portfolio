@@ -1,38 +1,40 @@
-import React from "react";
-import { useGradient } from "../Components/Button/GradientContext";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaintBrush } from "@fortawesome/free-solid-svg-icons";
+import { faSun } from "@fortawesome/free-solid-svg-icons"; // Importez l'icône pour le mode clair
 import "../main.css";
 
 function Header() {
-  const { gradient, changeGradient } = useGradient();
+  const [isDarkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!isDarkMode);
+  };
 
   return (
-    <header
-      style={{
-        backgroundImage: gradient,
-      }}
-    >
-      <h1 className="Title">Martin Duhem</h1>
-      <nav>
-        <ul>
-          <li>
-            <a href="#portfolio" className="header-link">
-              Portfolio
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="header-link">
-              Contact
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <FontAwesomeIcon
-        icon={faPaintBrush}
-        onClick={changeGradient}
-        className="Color"
-      />
+    <header className={`header ${isDarkMode ? "dark-mode" : ""}`}>
+      <div className="header-content">
+        <h1 className="Title">Portfolio</h1>
+        <nav>
+          <ul className="header-nav">
+            <li>
+              <a href="#about" className="header-link">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#contact" className="header-link">
+                Contact
+              </a>
+            </li>
+            <li>
+              <div className="header-icon" onClick={toggleDarkMode}>
+                <FontAwesomeIcon icon={faSun} className="Color" />{" "}
+                {/* Remplacez l'icône ici */}
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 }

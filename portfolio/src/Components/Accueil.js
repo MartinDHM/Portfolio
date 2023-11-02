@@ -1,41 +1,49 @@
 import React from "react";
-import { useGradient } from "../Components/Button/GradientContext";
-import GitHubProjects from "./Github/GithubProjet";
-import Martin from "../assets/dev_front.png";
 import "../main.css";
+import GitHubProjects from "./Github/GithubProjet";
+import InteractivePortrait from "./Interactive";
 
 function Accueil() {
-  const { gradient } = useGradient();
+  // Définissez la variable email avec une adresse e-mail valide
+  const email = "martin.duhem1@email.com";
+
+  const emailLinkStyle = {
+    fontWeight: "bold", // Mettre le texte en gras
+  };
+
   return (
-    <section id="accueil">
-      <section className="presentation">
-        <div className="presentation-text">
-          <h2 className="Accueil-about">À Propos :</h2>
-          <p>
-            Je suis Martin Duhem, un développeur Front-end passionné par la
-            création de sites web et d'applications interactives. À l'âge de 22
-            ans, j'ai décidé de changer de carrière pour suivre ma passion en
-            devenant intégrateur web. Ma formation en intégration web m'a permis
-            d'acquérir des compétences solides dans la conception et le
-            développement d'interfaces utilisateur conviviales et esthétiques.
-            Je suis constamment en quête de nouvelles opportunités pour
-            perfectionner mes compétences et relever des défis techniques
-            passionnants. Vous trouverez ci-dessous quelques-uns de mes projets
-            GitHub les plus récents qui illustrent mon engagement envers
-            l'excellence dans le développement Front-end. N'hésitez pas à
-            explorer ces projets et à me contacter si vous avez des questions ou
-            si vous souhaitez collaborer sur un projet.
-          </p>
+    <div className={`accueil`}>
+      <header className="header">
+        <div className="header-content">
+          <h1 className="Hello">
+            <span style={{ whiteSpace: "nowrap" }}>
+              Bienvenue ! Je suis Martin Duhem, Développeur Front-End, si mon
+              Portfolio vous a plu, Cliquez :
+              <a
+                href={`mailto:${email}`}
+                className="email-address"
+                style={emailLinkStyle}
+              >
+                {email}
+              </a>
+            </span>
+          </h1>
         </div>
-        <div className="profile-image">
-          <img src={Martin} alt="Moi" />
+      </header>
+      <div className="main-content">
+        <section className="animation">
+          <div className="animation-content">
+            <InteractivePortrait />
+          </div>
+        </section>
+      </div>
+      <section className="projets-recents">
+        <div className="projets-recents-content">
+          <h2 className="projets-title">Mes Projets :</h2>
+          <GitHubProjects />
         </div>
       </section>
-      <section className="Projet-recent" style={{ backgroundImage: gradient }}>
-        <h2 className="Accueil-title">Projets récents :</h2>
-        <GitHubProjects />
-      </section>
-    </section>
+    </div>
   );
 }
 

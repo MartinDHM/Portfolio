@@ -1,15 +1,24 @@
-/* App.css */
+@import "animate.css/animate.min.css";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
 .App {
   text-align: center;
   font-family: Arial, sans-serif;
-  color: #fff; /* Couleur du texte */
+  color: black; /* Couleur du texte */
   margin: 0 auto;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 h1 {
@@ -45,7 +54,21 @@ nav a:hover {
 }
 
 .Title {
-  margin-left: 22px;
+  letter-spacing: 10rem; /* Ajoutez un letter-spacing de 5px entre les lettres */
+  animation: titleAnimation 2s ease-in-out infinite; /* Ajoutez une animation similaire à celle du portrait */
+  font-size: 3rem;
+}
+
+@keyframes titleAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .project-card {
@@ -73,7 +96,17 @@ img {
 .project-description {
   margin: 10px 0;
 }
+.project-content {
+  padding: 20px; /* Espace autour du titre */
+  background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+  margin-top: 3rem;
+}
 
+.project-content h3 {
+  color: white; /* Couleur du texte en blanc */
+  font-size: 1.5rem; /* Taille du texte */
+  margin: 0; /* Supprime la marge par défaut du titre */
+}
 a {
   display: block;
   color: #fff;
@@ -82,6 +115,7 @@ a {
   border-radius: 5px;
   margin-top: 10px;
 }
+
 .gitLink {
   display: block;
   color: white;
@@ -99,6 +133,7 @@ a {
   padding-top: 22px;
   text-transform: uppercase; /* Met en majuscules */
 }
+
 .Accueil-about {
   color: orange;
 }
@@ -131,30 +166,244 @@ a {
   margin-bottom: 15px; /* Marge entre les paragraphes */
 }
 
-/* Animation pour le fondu (fade-in) */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .Color {
   background: none;
   border: none;
   color: white;
   margin-right: 22px;
+  font-size: 2rem;
 }
 
 .Color:hover {
-  color: black;
-  font-size: 15px;
-  transition: 0.3s;
+  color: #f5f5dc; /* Couleur du texte au survol */
+  font-size: 2rem;
 }
 
 .footer {
-  margin-top: 0;
+  margin-top: 15px;
   color: black;
+}
+/* Accueil.css */
+
+.accueil {
+  font-family: Arial, sans-serif;
+}
+
+.header-content {
+  animation: fadeIn 1s ease-in-out;
+  text-align: center; /* Centrez le texte horizontalement */
+  flex: 1; /* Utilisez flex pour occuper l'espace restant */
+  color: white;
+}
+
+.email-section {
+  text-align: center;
+  flex: 1; /* Utilisez flex pour occuper l'espace restant */
+}
+.email-address {
+  text-decoration: none; /* Supprime la soulignement par défaut des liens */
+  color: white; /* Couleur du texte par défaut */
+  animation: blink 1s infinite; /* Ajoutez une animation de clignotement infinie */
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1; /* Texte complètement visible */
+  }
+  50% {
+    opacity: 0.2; /* Texte complètement transparent */
+  }
+}
+
+/* Style de survol */
+.email-address:hover {
+  color: blue; /* Changez la couleur du texte au survol (par exemple, bleu) */
+  cursor: pointer; /* Changez le curseur de la souris en main (pointeur) au survol */
+  animation: none; /* Désactivez l'animation de clignotement au survol */
+}
+
+.header h1 {
+  margin: 11px;
+}
+
+.header p {
+  font-size: 2.5rem;
+  margin: 19px;
+}
+.header-content {
+  display: flex;
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.header-nav {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin-top: 20px; /* Augmentez la marge en haut pour séparer le titre et la navigation */
+  justify-content: center;
+  width: 100%;
+}
+
+.header-link {
+  text-decoration: none;
+  color: #fff;
+  margin: 10px;
+  font-size: 1.2rem;
+}
+
+.header-link:hover {
+  color: #f5f5dc; /* Couleur du texte au survol */
+  font-size: 1.25rem;
+}
+.header-icon {
+  margin: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.header-icon:hover {
+  transform: scale(1.2);
+}
+
+.header {
+  background-color: #2a2a2a;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hello {
+  position: relative;
+  white-space: nowrap; /* Force le texte à rester sur une seule ligne */
+  font-size: 2rem; /* Ajustez la taille de la police selon vos besoins */
+  color: transparent; /* Rend le texte transparent */
+}
+
+.Name {
+  font-size: 5rem;
+}
+
+.Work {
+  font-size: 5rem;
+}
+
+.animation {
+  background-color: #f7f7f7;
+  padding: 50px 0;
+}
+
+.presentation {
+  padding: 50px 0;
+}
+
+.profile-image {
+  max-width: 100%;
+}
+
+.projets-recents {
+  background-color: #2a2a2a;
+  color: #fff;
+  padding: 50px 0;
+}
+.projets-title {
+  letter-spacing: 10px; /* Ajoutez un letter-spacing de 5px entre les lettres */
+  font-size: 3rem;
+}
+
+.slider-group {
+  display: flex;
+  justify-content: center; /* Centrez horizontalement les cartes */
+  align-items: center; /* Centrez verticalement les cartes */
+  flex-wrap: wrap;
+}
+
+.slider-button {
+  background-color: #007bff; /* Couleur de fond bleu */
+  color: white; /* Couleur du texte blanc */
+  border: none; /* Supprime la bordure */
+  padding: 10px 20px; /* Marge intérieure pour le bouton */
+  border-radius: 5px; /* Coins arrondis */
+  text-decoration: none; /* Supprime la soulignement du lien */
+  cursor: pointer; /* Curseur de type main (pointer) au survol */
+  margin: 0 10px; /* Marge horizontale entre les boutons */
+}
+
+.slider-button:hover {
+  background-color: #0056b3; /* Couleur de fond bleu foncé au survol */
+}
+
+.project-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 50px;
+  padding: 10px;
+  text-align: center;
+  max-width: 255px;
+  box-shadow: 20px 19px 3px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  width: 100%;
+  height: 250px;
+}
+
+.project-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.project-title {
+  font-size: 1.4rem;
+  margin: 10px 0;
+  color: black;
+}
+.interactive-portrait {
+  position: relative;
+  cursor: pointer;
+  border: 2px solid #3498db; /* Bordure bleue */
+  transition: border-color 0.3s ease; /* Transition en douceur de la couleur de la bordure */
+  display: contents;
+
+  /* Ajoutez les styles de base pour votre portrait ici */
+}
+
+.interactive-portrait.hovered {
+  border-color: #e74c3c; /* Changement de couleur de bordure en rouge au survol */
+  transform: scale(1.1); /* Zoom sur le portrait au survol */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombre au survol */
+
+  /* Ajoutez des animations ou des styles supplémentaires lorsque le portrait est survolé */
+}
+
+.interactive-portrait img {
+  max-width: 100%; /* Garantit que l'image ne dépasse pas la largeur de son conteneur */
+  height: auto; /* Maintient le ratio hauteur/largeur de l'image */
+
+  /* Personnalisez les styles de l'image ici */
+  border-radius: 50%; /* Transforme l'image en un cercle */
+  border: 4px solid #fff; /* Ajoute une bordure blanche */
+  transition: border-color 0.3s ease; /* Transition en douceur de la couleur de la bordure */
+}
+
+.interactive-portrait.hovered img {
+  border-color: #e74c3c; /* Changement de couleur de bordure en rouge au survol de l'image */
+  filter: grayscale(100%); /* Grise l'image au survol */
+  transform: rotate(10deg); /* Fait tourner légèrement l'image au survol */
+  box-shadow: 0 0 15px rgba(231, 76, 60, 0.8); /* Ombre rouge au survol */
+}
+.github-button {
+  background-color: #007bff; /* Couleur de fond bleu */
+  color: white; /* Couleur du texte blanc */
+  border: none; /* Supprime la bordure */
+  padding: 10px 20px; /* Marge intérieure pour le bouton */
+  border-radius: 5px; /* Coins arrondis */
+  text-decoration: none; /* Supprime la soulignement du lien */
+  cursor: pointer; /* Curseur de type main (pointer) au survol */
+}
+
+.github-button:hover {
+  background-color: #0056b3; /* Couleur de fond bleu foncé au survol */
 }
