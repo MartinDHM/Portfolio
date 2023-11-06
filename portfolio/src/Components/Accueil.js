@@ -3,24 +3,19 @@ import "../main.css";
 import GitHubProjects from "./Github/GithubProjet";
 import InteractivePortrait from "./Interactive";
 import ParticleContainer from "./Background/Particule";
+import Contact from "./Contact";
+import AboutMe from "./About";
 
 function Accueil() {
-  // Définissez la variable email avec une adresse e-mail valide
-  // const email = "martin.duhem1@email.com";
-
-  // const emailLinkStyle = {
-  //   fontWeight: "bold", // Mettre le texte en gras
-  // };
-
   return (
     <section className={`accueil`}>
-      <div className="main-content">
+      <section className="main-content">
         <ParticleContainer />
         <div className="animation">
           <div className="animation-content">
             <InteractivePortrait />
             <div className="Présentation">
-              <h1 className="moi">Martin Duhem</h1>
+              <h2 className="moi">Martin Duhem</h2>
               <p className="work">
                 Développeur <span id="Frontend">Front-end</span>
               </p>
@@ -30,16 +25,29 @@ function Accueil() {
                 interfaces web élégantes et performantes qui captivent
                 l'audience et améliorent l'expérience utilisateur.
               </p>
+              <a href="#contact">Contactez-moi</a>{" "}
             </div>
           </div>
         </div>
-      </div>
-      <div className="projets-recents">
-        <div className="projets-recents-content">
-          <h2 className="projets-title">Mes Projets :</h2>
-          <GitHubProjects />
+      </section>
+      <section className="projets-recents">
+        <div id="portfolio">
+          <div className="projets-recents-content">
+            <h2 className="projets-title">Mes Projets :</h2>
+            <GitHubProjects />
+          </div>
         </div>
-      </div>
+      </section>
+      <section className="About">
+        <div id="about">
+          <AboutMe />
+        </div>
+      </section>
+      <section className="Contact-form">
+        <div id="contact">
+          <Contact />
+        </div>
+      </section>
     </section>
   );
 }
