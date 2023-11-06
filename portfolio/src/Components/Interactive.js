@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../main.css";
-import Martin from "../assets/Martin.png";
+import Martin from "../assets/Martin.jpg";
 
 function InteractivePortrait() {
   const [isHovered, setIsHovered] = useState(false);

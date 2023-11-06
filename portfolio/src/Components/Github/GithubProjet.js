@@ -13,28 +13,28 @@ const projectImages = {
 
 const projectLinks = {
   Ohmyfood: {
-    github: "https://github.com/MartinDHM/Ohmyfood", // Remplacez par le lien GitHub de votre projet
-    githubPages: "https://martindhm.github.io/Ohmyfood/", // Remplacez par le lien de vos GitHub Pages
+    github: "https://github.com/MartinDHM/Ohmyfood",
+    githubPages: "https://martindhm.github.io/Ohmyfood/",
   },
   "Print-it": {
-    github: "https://github.com/MartinDHM/Print-it", // Remplacez par le lien GitHub de votre projet
-    githubPages: "https://martindhm.github.io/Print-it/", // Remplacez par le lien de vos GitHub Pages
+    github: "https://github.com/MartinDHM/Print-it",
+    githubPages: "https://martindhm.github.io/Print-it/",
   },
   ArchiWebos: {
-    github: "https://github.com/MartinDHM/ArchiWebos", // Remplacez par le lien GitHub de votre projet
+    github: "https://github.com/MartinDHM/ArchiWebos",
   },
   "Kasa-App": {
-    github: "https://github.com/MartinDHM/Kasa-App", // Remplacez par le lien GitHub de votre projet
+    github: "https://github.com/MartinDHM/Kasa-App",
   },
   NinaCarducci: {
-    github: "https://github.com/MartinDHM/NinaCarducci", // Remplacez par le lien GitHub de votre projet
-    githubPages: "https://martindhm.github.io/NinaCarducci/", // Laissez vide s'il n'y a pas de GitHub Pages pour ce projet
+    github: "https://github.com/MartinDHM/NinaCarducci",
+    githubPages: "https://martindhm.github.io/NinaCarducci/",
   },
   "724events": {
-    github: "https://github.com/MartinDHM/724events", // Remplacez par le lien GitHub de votre projet
+    github: "https://github.com/MartinDHM/724events",
   },
   ArgentBankApp: {
-    github: "https://github.com/MartinDHM/ArgentBankApp", // Remplacez par le lien GitHub de votre projet
+    github: "https://github.com/MartinDHM/ArgentBankApp",
   },
 };
 

@@ -218,7 +218,7 @@ a {
 
 /* Style de survol */
 .email-address:hover {
-  color: blue; /* Changez la couleur du texte au survol (par exemple, bleu) */
+  color: #f5f5dc; /* Changez la couleur du texte au survol  */
   cursor: pointer; /* Changez le curseur de la souris en main (pointeur) au survol */
   animation: none; /* Désactivez l'animation de clignotement au survol */
 }
@@ -226,7 +226,9 @@ a {
 .header h1 {
   margin: 11px;
 }
-
+.Hello {
+  position: relative;
+}
 .header p {
   font-size: 2.5rem;
   margin: 19px;
@@ -246,6 +248,8 @@ a {
   margin-top: 20px; /* Augmentez la marge en haut pour séparer le titre et la navigation */
   justify-content: center;
   width: 100%;
+  z-index: 0;
+  position: relative;
 }
 
 .header-link {
@@ -295,6 +299,11 @@ a {
 .animation {
   background-color: #f7f7f7;
   padding: 50px 0;
+}
+.animation-content {
+  display: flex;
+  justify-content: end;
+  margin-right: 15rem;
 }
 
 .presentation {
@@ -352,7 +361,7 @@ a {
 
 .project-card img {
   max-width: 100%;
-  height: auto;
+  height: 59rem;
 }
 
 .project-title {
@@ -380,19 +389,28 @@ a {
 
 .interactive-portrait img {
   max-width: 100%; /* Garantit que l'image ne dépasse pas la largeur de son conteneur */
-  height: auto; /* Maintient le ratio hauteur/largeur de l'image */
+  height: 40rem; /* Maintient le ratio hauteur/largeur de l'image */
 
   /* Personnalisez les styles de l'image ici */
-  border-radius: 50%; /* Transforme l'image en un cercle */
+  clip-path: polygon(
+    50% 0%,
+    80% 10%,
+    100% 35%,
+    100% 70%,
+    80% 90%,
+    50% 100%,
+    20% 90%,
+    0% 70%,
+    0% 35%,
+    20% 10%
+  ); /*Forme de l'image */
   border: 4px solid #fff; /* Ajoute une bordure blanche */
   transition: border-color 0.3s ease; /* Transition en douceur de la couleur de la bordure */
 }
 
 .interactive-portrait.hovered img {
-  border-color: #e74c3c; /* Changement de couleur de bordure en rouge au survol de l'image */
   filter: grayscale(100%); /* Grise l'image au survol */
   transform: rotate(10deg); /* Fait tourner légèrement l'image au survol */
-  box-shadow: 0 0 15px rgba(231, 76, 60, 0.8); /* Ombre rouge au survol */
 }
 .github-button {
   background-color: #007bff; /* Couleur de fond bleu */
@@ -406,4 +424,50 @@ a {
 
 .github-button:hover {
   background-color: #0056b3; /* Couleur de fond bleu foncé au survol */
+}
+/*Particle*/
+/* ---- reset ---- */
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  background-color: #f7f7f7;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: 0;
+}
+.moi {
+  font-size: 3rem;
+}
+.work {
+  font-size: 3rem;
+}
+.Présentation {
+  position: absolute;
+  left: 2%;
+  top: 36%;
+  letter-spacing: 3rem;
+  font-size: 3rem;
+  width: 63%;
+}
+#Frontend {
+  color: green;
+}
+.client {
+  letter-spacing: 0.5rem;
+  font-size: 1rem;
+  width: 66%;
+  margin-left: 15%;
+  text-align: left;
+  font-weight: bold;
 }

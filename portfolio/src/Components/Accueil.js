@@ -2,48 +2,45 @@ import React from "react";
 import "../main.css";
 import GitHubProjects from "./Github/GithubProjet";
 import InteractivePortrait from "./Interactive";
+import ParticleContainer from "./Background/Particule";
 
 function Accueil() {
   // Définissez la variable email avec une adresse e-mail valide
-  const email = "martin.duhem1@email.com";
+  // const email = "martin.duhem1@email.com";
 
-  const emailLinkStyle = {
-    fontWeight: "bold", // Mettre le texte en gras
-  };
+  // const emailLinkStyle = {
+  //   fontWeight: "bold", // Mettre le texte en gras
+  // };
 
   return (
-    <div className={`accueil`}>
-      <header className="header">
-        <div className="header-content">
-          <h1 className="Hello">
-            <span style={{ whiteSpace: "nowrap" }}>
-              Bienvenue ! Je suis Martin Duhem, Développeur Front-End, si mon
-              Portfolio vous a plu, Cliquez :
-              <a
-                href={`mailto:${email}`}
-                className="email-address"
-                style={emailLinkStyle}
-              >
-                {email}
-              </a>
-            </span>
-          </h1>
-        </div>
-      </header>
+    <section className={`accueil`}>
       <div className="main-content">
-        <section className="animation">
+        <ParticleContainer />
+        <div className="animation">
           <div className="animation-content">
             <InteractivePortrait />
+            <div className="Présentation">
+              <h1 className="moi">Martin Duhem</h1>
+              <p className="work">
+                Développeur <span id="Frontend">Front-end</span>
+              </p>
+              <p className="client">
+                En tant que développeur front-end passionné, je suis déterminé à
+                transformer les idées de mes clients en réalité, en créant des
+                interfaces web élégantes et performantes qui captivent
+                l'audience et améliorent l'expérience utilisateur.
+              </p>
+            </div>
           </div>
-        </section>
+        </div>
       </div>
-      <section className="projets-recents">
+      <div className="projets-recents">
         <div className="projets-recents-content">
           <h2 className="projets-title">Mes Projets :</h2>
           <GitHubProjects />
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
 

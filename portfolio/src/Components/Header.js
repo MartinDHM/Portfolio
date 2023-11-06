@@ -26,12 +26,6 @@ function Header() {
                 Contact
               </a>
             </li>
-            <li>
-              <div className="header-icon" onClick={toggleDarkMode}>
-                <FontAwesomeIcon icon={faSun} className="Color" />{" "}
-                {/* Remplacez l'icône ici */}
-              </div>
-            </li>
           </ul>
         </nav>
       </div>
