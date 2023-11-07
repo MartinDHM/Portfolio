@@ -591,3 +591,74 @@ button:hover {
   padding: 10px;
   transition: background-color 0.3s ease; /* Animation de transition en douceur */
 }
+@media (max-width: 811px) {
+  .Title {
+    letter-spacing: 2rem;
+    animation: titleAnimation 2s ease-in-out infinite;
+    font-size: 15px;
+  }
+  .contact-form {
+    margin-left: 12pc;
+    top: -20pc;
+    margin-top: 14rem;
+  }
+  .interactive-portrait img {
+    height: 12rem;
+    margin: -17px -12pc 12pc 12pc;
+  }
+  .moi {
+    margin-top: -15rem;
+  }
+  .client {
+    width: 134%;
+    font-size: 11px;
+    margin-left: 0px;
+  }
+  #particles-js {
+    height: 51%;
+  }
+  .work {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 375px) {
+  .Title {
+    letter-spacing: 0.5rem;
+    animation: titleAnimation 2s ease-in-out infinite;
+    font-size: 12px;
+  }
+  nav a {
+    font-size: 9px;
+  }
+  .contact-form {
+    margin: 24pc 0 0 20%;
+  }
+  .moi {
+    font-size: 14px;
+    margin-top: -9pc;
+    letter-spacing: 29px;
+  }
+  .client {
+    font-size: 11px;
+  }
+  .interactive-portrait img {
+    height: 8rem;
+    margin: -16px -15pc 12pc 12pc;
+  }
+  #particles-js {
+    height: 60%;
+  }
+  .work {
+    font-size: 0.75rem;
+    letter-spacing: 12px;
+  }
+  a {
+    font-size: 22px;
+    letter-spacing: 10px;
+    width: 116%;
+  }
+  .github-button {
+    font-size: 11px;
+    width: 101%;
+  }
+}
