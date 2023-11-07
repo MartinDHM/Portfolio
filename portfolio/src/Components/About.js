@@ -36,12 +36,11 @@ function AboutMe() {
         solutions sur mesure.
       </Section>
       <Section title="Vous et moi">
-        Mon engagement est de créer des expériences web exceptionnelles pour mes
-        clients en utilisant des technologies Front-end modernes. Mon approche
-        s'adapte à chaque projet pour répondre aux besoins spécifiques. Qu'il
-        s'agisse de sites réactifs, de web apps interactives ou d'une
-        optimisation de l'expérience utilisateur, je m'engage à fournir des
-        solutions sur mesure.
+        Travaillons ensemble pour donner vie à vos idées et atteindre vos
+        objectifs en matière de développement web. Si vous avez un projet en
+        tête ou si vous cherchez un partenaire pour collaborer, n'hésitez pas à
+        me contacter. Je serais ravi de discuter de la manière dont nous pouvons
+        travailler ensemble pour concrétiser vos projets web.
       </Section>
     </div>
   );

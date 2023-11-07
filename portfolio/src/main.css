@@ -19,7 +19,7 @@ code {
 .App {
   text-align: center;
   font-family: Arial, sans-serif;
-  color: black; /* Couleur du texte */
+  color: black;
   margin: 0 auto;
 }
 
@@ -57,8 +57,8 @@ nav a:hover {
 }
 
 .Title {
-  letter-spacing: 10rem; /* Ajoutez un letter-spacing de 5px entre les lettres */
-  animation: titleAnimation 2s ease-in-out infinite; /* Ajoutez une animation similaire à celle du portrait */
+  letter-spacing: 10rem;
+  animation: titleAnimation 2s ease-in-out infinite;
   font-size: 2rem;
 }
 
@@ -108,9 +108,9 @@ img {
 }
 
 .project-content h3 {
-  color: white; /* Couleur du texte en blanc */
-  font-size: 1.5rem; /* Taille du texte */
-  margin: 0; /* Supprime la marge par défaut du titre */
+  color: white;
+  font-size: 1.5rem;
+  margin: 0;
 }
 a {
   display: block;
@@ -132,11 +132,11 @@ a {
 }
 
 .Accueil-title {
-  color: white; /* Couleur du titre */
-  font-size: 24px; /* Taille de la police du titre */
-  font-weight: bold; /* Gras pour le titre */
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
   padding-top: 22px;
-  text-transform: uppercase; /* Met en majuscules */
+  text-transform: uppercase;
 }
 
 .Accueil-about {
@@ -151,16 +151,16 @@ a {
 
 .presentation-text {
   flex: 1;
-  color: #000; /* Couleur du texte en noir */
-  font-size: 16px; /* Taille de la police par défaut */
-  line-height: 1.5; /* Espacement des lignes par défaut */
-  max-width: 800px; /* Augmenter la largeur du texte */
-  margin: 0 auto; /* Centrer le texte horizontalement */
-  text-align: justify; /* Justifier le texte */
+  color: #000;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: justify;
 }
 
 .presentation p {
-  margin-bottom: 20px; /* Augmenter la marge entre les paragraphes */
+  margin-bottom: 20px;
 }
 
 .profile-image {
@@ -168,7 +168,7 @@ a {
 }
 
 .presentation p {
-  margin-bottom: 15px; /* Marge entre les paragraphes */
+  margin-bottom: 15px;
 }
 
 .Color {
@@ -180,7 +180,7 @@ a {
 }
 
 .Color:hover {
-  color: #f5f5dc; /* Couleur du texte au survol */
+  color: #f5f5dc;
   font-size: 2rem;
 }
 
@@ -188,7 +188,6 @@ a {
   margin-top: 15px;
   color: black;
 }
-/* Accueil.css */
 
 .accueil {
   font-family: Arial, sans-serif;
@@ -196,36 +195,35 @@ a {
 
 .header-content {
   animation: fadeIn 1s ease-in-out;
-  text-align: center; /* Centrez le texte horizontalement */
-  flex: 1; /* Utilisez flex pour occuper l'espace restant */
+  text-align: center;
+  flex: 1;
   color: white;
 }
 
 .email-section {
   text-align: center;
-  flex: 1; /* Utilisez flex pour occuper l'espace restant */
+  flex: 1;
 }
 .email-address {
-  text-decoration: none; /* Supprime la soulignement par défaut des liens */
-  color: white; /* Couleur du texte par défaut */
-  animation: blink 1s infinite; /* Ajoutez une animation de clignotement infinie */
+  text-decoration: none;
+  color: white;
+  animation: blink 1s infinite;
 }
 
 @keyframes blink {
   0%,
   100% {
-    opacity: 1; /* Texte complètement visible */
+    opacity: 1;
   }
   50% {
-    opacity: 0.2; /* Texte complètement transparent */
+    opacity: 0.2;
   }
 }
 
-/* Style de survol */
 .email-address:hover {
-  color: #f5f5dc; /* Changez la couleur du texte au survol  */
-  cursor: pointer; /* Changez le curseur de la souris en main (pointeur) au survol */
-  animation: none; /* Désactivez l'animation de clignotement au survol */
+  color: #f5f5dc;
+  cursor: pointer;
+  animation: none;
 }
 
 .header h1 {
@@ -240,7 +238,7 @@ a {
 }
 .header-content {
   display: flex;
-  justify-content: center; /* Centrer horizontalement */
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
@@ -250,7 +248,7 @@ a {
   list-style: none;
   padding: 0;
   display: flex;
-  margin-top: 20px; /* Augmentez la marge en haut pour séparer le titre et la navigation */
+  margin-top: 20px;
   justify-content: center;
   width: 100%;
   z-index: 0;
@@ -265,7 +263,7 @@ a {
 }
 
 .header-link:hover {
-  color: #f5f5dc; /* Couleur du texte au survol */
+  color: #f5f5dc;
   font-size: 1.25rem;
 }
 .header-icon {
@@ -288,9 +286,9 @@ a {
 
 .hello {
   position: relative;
-  white-space: nowrap; /* Force le texte à rester sur une seule ligne */
-  font-size: 2rem; /* Ajustez la taille de la police selon vos besoins */
-  color: transparent; /* Rend le texte transparent */
+  white-space: nowrap;
+  font-size: 2rem;
+  color: transparent;
 }
 
 .Name {
@@ -325,14 +323,14 @@ a {
   padding: 50px 0;
 }
 .projets-title {
-  letter-spacing: 10px; /* Ajoutez un letter-spacing de 5px entre les lettres */
+  letter-spacing: 10px;
   font-size: 3rem;
 }
 
 .slider-group {
   display: flex;
-  justify-content: center; /* Centrez horizontalement les cartes */
-  align-items: center; /* Centrez verticalement les cartes */
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -370,17 +368,17 @@ a {
   max-width: 250px;
   box-shadow: 20px 19px 3px rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  width: 100%; /* Ajustez la largeur à 100% pour garantir que toutes les cartes aient la même largeur */
-  height: 250px; /* Définissez la hauteur fixe de toutes les cartes */
+  width: 100%;
+  height: 250px;
   display: flex;
-  flex-direction: column; /* Utilisez la disposition en colonne pour aligner le contenu verticalement */
-  justify-content: space-between; /* Alignez le contenu en haut et en bas de la carte */
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .project-card img {
   max-width: 100%;
-  height: 100%; /* L'image occupera toute la hauteur de la carte */
-  object-fit: cover; /* L'image remplira la carte sans être déformée */
+  height: 100%;
+  object-fit: cover;
 }
 .description {
   font-size: 10px;
@@ -394,26 +392,21 @@ a {
 .interactive-portrait {
   position: relative;
   cursor: pointer;
-  border: 2px solid #3498db; /* Bordure bleue */
-  transition: border-color 0.3s ease; /* Transition en douceur de la couleur de la bordure */
+  border: 2px solid #3498db;
+  transition: border-color 0.3s ease;
   display: contents;
-
-  /* Ajoutez les styles de base pour votre portrait ici */
 }
 
 .interactive-portrait.hovered {
-  border-color: #e74c3c; /* Changement de couleur de bordure en rouge au survol */
-  transform: scale(1.1); /* Zoom sur le portrait au survol */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombre au survol */
-
-  /* Ajoutez des animations ou des styles supplémentaires lorsque le portrait est survolé */
+  border-color: #e74c3c;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .interactive-portrait img {
-  max-width: 100%; /* Garantit que l'image ne dépasse pas la largeur de son conteneur */
-  height: 40rem; /* Maintient le ratio hauteur/largeur de l'image */
+  max-width: 100%;
+  height: 40rem;
 
-  /* Personnalisez les styles de l'image ici */
   clip-path: polygon(
     50% 0%,
     80% 10%,
@@ -425,27 +418,27 @@ a {
     0% 70%,
     0% 35%,
     20% 10%
-  ); /*Forme de l'image */
-  border: 4px solid #fff; /* Ajoute une bordure blanche */
-  transition: border-color 0.3s ease; /* Transition en douceur de la couleur de la bordure */
+  );
+  border: 4px solid #fff;
+  transition: border-color 0.3s ease;
 }
 
 .interactive-portrait.hovered img {
-  filter: grayscale(100%); /* Grise l'image au survol */
-  transform: rotate(10deg); /* Fait tourner légèrement l'image au survol */
+  filter: grayscale(100%);
+  transform: rotate(10deg);
 }
 .github-button {
-  background-color: #007bff; /* Couleur de fond bleu */
-  color: white; /* Couleur du texte blanc */
-  border: none; /* Supprime la bordure */
-  padding: 5px 0px; /* Marge intérieure pour le bouton */
-  border-radius: 5px; /* Coins arrondis */
-  text-decoration: none; /* Supprime la soulignement du lien */
-  cursor: pointer; /* Curseur de type main (pointer) au survol */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 0px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .github-button:hover {
-  background-color: #0056b3; /* Couleur de fond bleu foncé au survol */
+  background-color: #0056b3;
 }
 /*Particle*/
 /* ---- reset ---- */
@@ -589,7 +582,7 @@ button:hover {
   background-color: #e6f7ff;
   border-radius: 10px;
   padding: 10px;
-  transition: background-color 0.3s ease; /* Animation de transition en douceur */
+  transition: background-color 0.3s ease;
 }
 @media (max-width: 811px) {
   .Title {

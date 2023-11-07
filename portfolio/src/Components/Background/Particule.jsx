@@ -1,13 +1,18 @@
 // ParticleContainer.jsx
 import React, { useEffect } from "react";
-import "particles.js";
+import "particles.js"; // Importe la bibliothèque particles.js
 
 const ParticleContainer = () => {
   useEffect(() => {
     // Configuration de particles.js
     /* global particlesJS */
+    // Utilise useEffect pour initialiser la configuration de la bibliothèque particles.js lors du chargement de la composante.
+
+    // L'objet "particlesJS" est une variable globale fournie par la bibliothèque particles.js.
+
     particlesJS("particles-js", {
       particles: {
+        // Configure les particules
         number: {
           value: 160,
           density: {

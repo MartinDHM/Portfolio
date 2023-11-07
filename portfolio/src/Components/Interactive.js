@@ -1,16 +1,17 @@
+// InteractivePortrait.jsx
 import React, { useState } from "react";
-import "../main.css";
-import Martin from "../assets/Martin.jpg";
+import "../main.css"; // Importe le fichier CSS pour les styles
+import Martin from "../assets/Martin.jpg"; // Importe l'image du portrait
 
 function InteractivePortrait() {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false); // Utilise l'état local "isHovered" pour gérer le survol de la souris
 
   const handleMouseEnter = () => {
-    setIsHovered(true);
+    setIsHovered(true); // Gère l'événement de survol de la souris en mettant "isHovered" à true
   };
 
   const handleMouseLeave = () => {
-    setIsHovered(false);
+    setIsHovered(false); // Gère l'événement de sortie de la souris en mettant "isHovered" à false
   };
 
   return (

@@ -60,6 +60,7 @@ function GitHubProjects() {
   const [currentPage, setCurrentPage] = useState(0); // Page actuelle du slider
   const projectsPerPage = 3; // Nombre de projets à afficher par page
 
+  // Utilisez useEffect pour récupérer la liste des projets GitHub de l'utilisateur "MartinDHM" lors du chargement de la page.
   useEffect(() => {
     fetch("https://api.github.com/users/MartinDHM/repos")
       .then((response) => response.json())
@@ -68,21 +69,23 @@ function GitHubProjects() {
       });
   }, []);
 
-  // Divisez les projets en groupes de trois projets.
+  // Divisez les projets en groupes de trois projets pour afficher en carrousel.
   const projectsGroups = [];
   for (let i = 0; i < projects.length; i += projectsPerPage) {
     projectsGroups.push(projects.slice(i, i + projectsPerPage));
   }
 
+  // Gère le passage à la page suivante dans le carrousel.
   const handleNextPage = () => {
     if (currentPage < projectsGroups.length - 1) {
       setCurrentPage(currentPage + 1);
     } else {
-      // Si nous atteignons la dernière page, revenons au début.
+      // Si la dernière page est atteinte, le slider revient au début.
       setCurrentPage(0);
     }
   };
 
+  // Gère le passage à la page précédente dans le carrousel.
   const handlePrevPage = () => {
     if (currentPage > 0) {
       setCurrentPage(currentPage - 1);
