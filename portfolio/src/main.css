@@ -624,7 +624,7 @@ button:hover {
 @media screen and (max-width: 1364px) {
   .interactive-portrait img {
     position: relative;
-    right: -27%;
+    right: -18%;
     height: 20pc;
     top: 42%;
   }
@@ -646,6 +646,9 @@ button:hover {
   .client {
     font-size: 12px;
     width: 91%;
+  }
+  .contact-form {
+    margin: 194px 20px -300px 16pc;
   }
 }
 @media screen and (max-width: 1140px) {
@@ -717,7 +720,7 @@ button:hover {
 }
 @media screen and (max-width: 934px) {
   .interactive-portrait img {
-    right: -49%;
+    right: -30%;
   }
 }
 
