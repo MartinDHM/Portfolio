@@ -584,10 +584,10 @@ button:hover {
   padding: 10px;
   transition: background-color 0.3s ease;
 }
-@media (max-width: 811px) {
+
+@media screen and (max-width: 811px) {
   .Title {
     letter-spacing: 2rem;
-    animation: titleAnimation 2s ease-in-out infinite;
     font-size: 15px;
   }
   .contact-form {
@@ -614,10 +614,10 @@ button:hover {
     font-size: 1rem;
   }
 }
-@media (max-width: 375px) {
+
+@media screen and (max-width: 375px) {
   .Title {
-    letter-spacing: 0.5rem;
-    animation: titleAnimation 2s ease-in-out infinite;
+    letter-spacing: 0.1rem;
     font-size: 12px;
   }
   nav a {
@@ -628,11 +628,13 @@ button:hover {
   }
   .moi {
     font-size: 14px;
-    margin-top: -9pc;
+    margin-top: -10pc;
     letter-spacing: 29px;
   }
   .client {
-    font-size: 11px;
+    font-size: 14px;
+    letter-spacing: 0;
+    margin-top: 28px;
   }
   .interactive-portrait img {
     height: 8rem;
@@ -647,8 +649,9 @@ button:hover {
   }
   a {
     font-size: 22px;
-    letter-spacing: 10px;
-    width: 116%;
+    letter-spacing: 1px;
+    width: 91%;
+    margin-top: 2px;
   }
   .github-button {
     font-size: 11px;
