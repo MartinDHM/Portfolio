@@ -8,6 +8,7 @@ function Contact() {
     subject: "",
     message: "",
   });
+  const [formError, setFormError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,8 +18,29 @@ function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const generateMailtoLink = () => {
+    const { name, email, subject, message } = formData;
+    const mailtoUri = `mailto:martin.duhem1@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(
+      `Nom: ${name}\nE-mail: ${email}\nMessage: ${message}`
+    )}`;
+    return mailtoUri;
+  };
+
+  // Vérifie si tous les champs sont remplis
+  const isFormValid = () => {
+    const { name, email, subject, message } = formData;
+    return name !== "" && email !== "" && subject !== "" && message !== "";
+  };
+
+  const handleContactClick = (e) => {
+    if (!isFormValid()) {
+      e.preventDefault(); // Empêche le lien de s'ouvrir si le formulaire n'est pas valide
+      setFormError("Veuillez remplir tous les champs du formulaire.");
+    } else {
+      setFormError(null); // Réinitialise l'erreur s'il n'y en a pas
+    }
   };
 
   return (
@@ -39,7 +61,7 @@ function Contact() {
 
       <section className="contact-form">
         <h2>Contactez-moi</h2>
-        <form onSubmit={handleSubmit}>
+        <div className="form-container">
           <div className="form-group">
             <label htmlFor="name">Nom :</label>
             <input
@@ -84,8 +106,15 @@ function Contact() {
               required
             ></textarea>
           </div>
-          <button type="submit">Envoyer</button>
-        </form>
+          {formError && <p className="form-error">{formError}</p>}
+        </div>
+        <a
+          href={generateMailtoLink()}
+          className={`contact-button ${isFormValid() ? "" : "disabled"}`}
+          onClick={handleContactClick}
+        >
+          Envoyer
+        </a>
       </section>
     </div>
   );

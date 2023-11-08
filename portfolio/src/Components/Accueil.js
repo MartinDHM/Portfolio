@@ -25,7 +25,9 @@ function Accueil() {
                 interfaces web élégantes et performantes qui captivent
                 l'audience et améliorent l'expérience utilisateur.
               </p>
-              <a href="#contact">Contactez-moi</a>{" "}
+              <a className="Contact-me" href="#contact">
+                Contactez-moi
+              </a>{" "}
             </div>
           </div>
         </div>
