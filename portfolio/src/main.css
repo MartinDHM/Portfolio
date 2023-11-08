@@ -57,9 +57,13 @@ nav a:hover {
 }
 
 .Title {
-  letter-spacing: 10rem;
+  letter-spacing: 5rem;
   animation: titleAnimation 2s ease-in-out infinite;
   font-size: 2rem;
+}
+.nav {
+  right: 1%;
+  position: absolute;
 }
 
 @keyframes titleAnimation {
@@ -452,7 +456,7 @@ canvas {
 #particles-js {
   position: absolute;
   width: 100%;
-  height: 80%;
+  height: 76%;
   background-color: #f7f7f7;
   background-image: url("");
   background-repeat: no-repeat;
@@ -602,10 +606,61 @@ button:hover {
   transform: scale(1.1);
   color: white;
 }
-
-@media screen and (max-width: 811px) {
+@media screen and (max-width: 1700px) {
+  .interactive-portrait img {
+    position: relative;
+    right: -11%;
+  }
+  .work {
+    font-size: 2pc;
+  }
+}
+@media screen and (max-width: 1422px) {
+  .interactive-portrait img {
+    position: relative;
+    right: -11%;
+  }
+}
+@media screen and (max-width: 1364px) {
+  .interactive-portrait img {
+    position: relative;
+    right: -27%;
+    height: 20pc;
+    top: 42%;
+  }
+  .work {
+    font-size: 1pc;
+  }
+  #particles-js {
+    height: 41%;
+  }
+  .moi {
+    margin-top: -13rem;
+  }
+  .projets-title {
+    display: none;
+  }
+  .Contact-me {
+    font-size: 23px;
+  }
+  .client {
+    font-size: 12px;
+    width: 91%;
+  }
+}
+@media screen and (max-width: 1140px) {
   .Title {
-    letter-spacing: 2rem;
+    letter-spacing: 4rem;
+    font-size: 15px;
+  }
+  .projets-title {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 935px) {
+  .Title {
+    letter-spacing: 4rem;
     font-size: 15px;
   }
   .contact-form {
@@ -614,60 +669,97 @@ button:hover {
     margin-top: 14rem;
   }
   .interactive-portrait img {
-    height: 12rem;
-    margin: -17px -12pc 12pc 12pc;
+    height: 11rem;
+    right: -49%;
+    top: -15%;
   }
   .moi {
-    margin-top: -15rem;
+    margin-top: -13rem;
+    font-size: 15px;
   }
   .client {
-    width: 134%;
+    width: 100%;
     font-size: 11px;
     margin-left: 0px;
+    letter-spacing: 3.5px;
   }
   #particles-js {
     height: 51%;
   }
   .work {
-    font-size: 1rem;
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-left: -41px;
+  }
+  .Contact-me {
+    font-size: 10px;
+    letter-spacing: 11px;
+    margin-left: -51px;
   }
   .contact-button {
     margin-left: 4%;
   }
+  .nav {
+    display: none;
+  }
+  .header {
+    justify-content: center;
+  }
+  #particles-js {
+    height: 30%;
+  }
+  .projets-title {
+    display: none;
+  }
+  .projets-title {
+    display: none;
+  }
+}
+@media screen and (max-width: 934px) {
+  .interactive-portrait img {
+    right: -49%;
+  }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 640px) {
   .Title {
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.5rem;
     font-size: 12px;
   }
   nav a {
     font-size: 9px;
   }
   .contact-form {
-    margin: 24pc 0 0 20%;
+    margin: 24pc 0 0 23%;
   }
   .moi {
     font-size: 14px;
-    margin-top: -10pc;
-    letter-spacing: 29px;
+    margin-top: -14pc;
+    letter-spacing: 25px;
+    margin-left: -10px;
+    width: 100%;
   }
   .client {
-    font-size: 22px;
+    font-size: 12px;
     letter-spacing: 0;
-    margin-top: 28px;
-    margin-left: 32px;
+    margin-top: -59px;
+    margin-left: 10px;
+    margin-bottom: 4pc;
   }
   .interactive-portrait img {
-    height: 8rem;
-    margin: -7px -14pc 12pc 12pc;
+    position: absolute;
+    right: 5%;
+    top: 9%;
+    height: 146px;
   }
   #particles-js {
-    height: 60%;
+    height: 47%;
   }
   .work {
     font-size: 0.75rem;
-    letter-spacing: 12px;
+    letter-spacing: 10px;
+    margin-bottom: 5pc;
+    margin-left: -29px;
   }
   a {
     font-size: 22px;
@@ -680,9 +772,16 @@ button:hover {
     width: 101%;
   }
   .Contact-me {
-    margin-left: 58px;
+    margin-left: 62px;
+    font-size: 20px;
   }
   .contact-button {
     margin-left: 0%;
+  }
+  .slider-group {
+    margin-top: 23pc;
+  }
+  .projets-title {
+    display: none;
   }
 }

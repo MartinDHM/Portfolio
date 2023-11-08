@@ -16,9 +16,9 @@ function Accueil() {
             <InteractivePortrait />
             <div className="Présentation">
               <h2 className="moi">Martin Duhem</h2>
-              <p className="work">
+              <h3 className="work">
                 Développeur <span id="Frontend">Front-end</span>
-              </p>
+              </h3>
               <p className="client">
                 En tant que développeur front-end passionné, je suis déterminé à
                 transformer les idées de mes clients en réalité, en créant des
