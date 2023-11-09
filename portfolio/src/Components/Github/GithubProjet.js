@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../main.css";
 
 const projectImages = {
+  Portfolio: require("../../assets/projet12.webp"),
   "Print-it": require("../../assets/projet6.webp"),
   ArchiWebos: require("../../assets/projet7.webp"),
   "Kasa-App": require("../../assets/projet8.webp"),
@@ -12,6 +13,9 @@ const projectImages = {
 };
 
 const projectLinks = {
+  Portfolio: {
+    github: "https://github.com/MartinDHM/Portfolio",
+  },
   Ohmyfood: {
     github: "https://github.com/MartinDHM/Ohmyfood",
     githubPages: "https://martindhm.github.io/Ohmyfood/",
@@ -53,6 +57,8 @@ const projectDescriptions = {
     "Je rejoins Argent Bank en tant que développeur front-end. C'est une nouvelle banque en ligne qui vise à se démarquer dans le secteur bancaire. En collaboration avec Mila, la cheffe de projet, je travaille sur la création du tableau de bord des utilisateurs. Nous recevons deux courriers électroniques du CTO, Avery Moreau",
   Ohmyfood:
     'Mon projet, nommé "OhMyFood", vise à regrouper les menus de restaurants gastronomiques et à proposer bien plus que une simple réservation. Les clients auront la liberté de personnaliser leur menu, et leurs plats seront prêts dès leur arrivée, éliminant ainsi les interminables attentes au restaurant ',
+  Portfolio:
+    "Bienvenue sur mon portfolio en ligne ! Découvrez mes projets, compétences et expériences professionnelles variés, allant du développement web à la conception graphique.",
 };
 
 function GitHubProjects() {
