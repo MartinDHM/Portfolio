@@ -477,21 +477,14 @@ canvas {
 }
 .contact-form {
   background-color: #f9f9f9;
-  padding: 20px;
-  margin: 20px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-left: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 49%;
-  display: flex;
-  flex-direction: column;
-  margin-left: 30pc;
-  z-index: 2;
+  margin: 20px 0 -287px 24pc;
+  padding: 20px;
   position: relative;
   top: -20pc;
-  margin-bottom: -293px;
+  width: 49%;
+  z-index: 2;
 }
 
 form {
@@ -754,7 +747,7 @@ button:hover {
   }
   .github-button {
     font-size: 11px;
-    width: 101%;
+    width: 78%;
   }
   .Contact-me {
     margin-left: 62px;
