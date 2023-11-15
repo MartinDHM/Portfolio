@@ -33,7 +33,7 @@ const projectDescriptions = {
   NinaCarducci:
     "En tant que développeur freelance, je me lance dans l'offre de services d'optimisation SEO à de nouveaux clients. J'ai analysé plusieurs sites web, contacté les administrateurs des sites ayant un potentiel d'optimisation pour leur proposer mes services. Parmi mes prospects se trouve le site de Nina Carducci, une photographe recommandée par un ami.",
   "724events":
-    "En tant que développeur front-end freelance, sollicité par l'agence événementielle 724events pour mettre en ligne la nouvelle version de leur site vitrine, une page unique.",
+    "724events a sollicité mon expertise pour compléter une mission passionnante. Ils ont l'intention de lancer la nouvelle version de leur site vitrine, une page unique au design validé. Bien que le site soit fonctionnel, quelques bugs subsistent, affectant l'expérience des visiteurs. Mon rôle est d'intervenir et de résoudre ces problèmes pour assurer le succès du projet.",
   ArgentBankApp:
     "Rejoins Argent Bank en tant que développeur front-end. Nouvelle banque en ligne qui vise à se démarquer dans le secteur bancaire. En collaboration avec Mila, la cheffe de projet, je travaille sur la création du tableau de bord des utilisateurs. Nous recevons deux courriers électroniques du CTO, Avery Moreau.",
   Ohmyfood:

@@ -105,7 +105,7 @@ img {
 
 .project-content {
   position: absolute;
-  bottom: 0;
+  bottom: 1px;
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.7);
@@ -623,6 +623,9 @@ button:hover {
     position: relative;
     right: -11%;
   }
+  .project-content {
+    bottom: 0;
+  }
 }
 @media screen and (max-width: 1364px) {
   .interactive-portrait img {
@@ -653,6 +656,9 @@ button:hover {
   .contact-form {
     margin: 194px 20px -300px 16pc;
   }
+  .project-content {
+    bottom: 0;
+  }
 }
 @media screen and (max-width: 1140px) {
   .Title {
@@ -661,6 +667,9 @@ button:hover {
   }
   .projets-title {
     display: none;
+  }
+  .project-content {
+    bottom: 0;
   }
 }
 
@@ -717,10 +726,16 @@ button:hover {
   .projets-title {
     display: none;
   }
+  .project-content {
+    bottom: 0;
+  }
 }
 @media screen and (max-width: 934px) {
   .interactive-portrait img {
     right: -30%;
+  }
+  .project-content {
+    bottom: 0;
   }
 }
 
@@ -786,5 +801,8 @@ button:hover {
   }
   .projets-title {
     display: none;
+  }
+  .project-content {
+    bottom: 0;
   }
 }

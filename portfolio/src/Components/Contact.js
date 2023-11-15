@@ -1,50 +1,31 @@
-import React, { useState } from "react";
-import "../main.css"; // Importez le fichier CSS
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-  const [formError, setFormError] = useState(null);
+  const form = useRef();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  const generateMailtoLink = () => {
-    const { name, email, subject, message } = formData;
-    const mailtoUri = `mailto:martin.duhem1@gmail.com?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(
-      `Nom: ${name}\nE-mail: ${email}\nMessage: ${message}`
-    )}`;
-    return mailtoUri;
-  };
-
-  // Vérifie si tous les champs sont remplis
-  const isFormValid = () => {
-    const { name, email, subject, message } = formData;
-    return name !== "" && email !== "" && subject !== "" && message !== "";
-  };
-
-  const handleContactClick = (e) => {
-    if (!isFormValid()) {
-      e.preventDefault(); // Empêche le lien de s'ouvrir si le formulaire n'est pas valide
-      setFormError("Veuillez remplir tous les champs du formulaire.");
-    } else {
-      setFormError(null); // Réinitialise l'erreur s'il n'y en a pas
-    }
+    emailjs
+      .sendForm(
+        "service_5odzdhi",
+        "template_e9n5ki5",
+        form.current,
+        "9I4VmzwtkuzPraE8M"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
-    <div className="contact-container">
+    <section className="contact-container">
       <div className="wave-container">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -58,65 +39,32 @@ function Contact() {
           ></path>
         </svg>
       </div>
-
-      <section className="contact-form">
+      <div className="contact-form">
         <h2>Contactez-moi</h2>
         <div className="form-container">
-          <div className="form-group">
-            <label htmlFor="name">Nom :</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">E-mail :</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="subject">Sujet :</label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Message :</label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows="4"
-              required
-            ></textarea>
-          </div>
-          {formError && <p className="form-error">{formError}</p>}
+          <form ref={form} onSubmit={sendEmail}>
+            <div className="form-group">
+              <label htmlFor="user_name">Nom :</label>
+              <input type="text" id="user_name" name="user_name" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="user_email">E-mail :</label>
+              <input type="email" id="user_email" name="user_email" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="message">Message :</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+            <input type="submit" value="Envoyer" className="contact-button" />
+          </form>
         </div>
-        <a
-          href={generateMailtoLink()}
-          className={`contact-button ${isFormValid() ? "" : "disabled"}`}
-          onClick={handleContactClick}
-        >
-          Envoyer
-        </a>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
 
