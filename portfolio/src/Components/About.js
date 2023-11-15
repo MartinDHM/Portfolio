@@ -27,6 +27,13 @@ function AboutMe() {
         fluide et agréable que possible, tout en garantissant une accessibilité
         universelle.
       </Section>
+      <Section title="Mes Compétences">
+        En tant que développeur Front-end, j'ai acquis des compétences
+        approfondies dans divers domaines, notamment React, JavaScript, HTML5,
+        CSS3, et bien d'autres. Je suis constamment en train d'apprendre et de
+        m'adapter aux dernières technologies pour offrir des solutions de
+        qualité à mes clients.
+      </Section>
       <Section title="Ma Proposition">
         Mon engagement est de créer des expériences web exceptionnelles pour mes
         clients en utilisant des technologies Front-end modernes. Mon approche

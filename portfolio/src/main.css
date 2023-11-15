@@ -82,6 +82,78 @@ img {
   height: auto;
 }
 
+.project-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  text-align: center;
+  width: 30pc;
+  height: 30pc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: hidden; /* Ajout d'une propriété pour masquer le débordement du contenu */
+  position: relative;
+}
+
+.project-img {
+  height: 152px;
+  border-radius: 29%;
+  width: 161px;
+  margin-top: 9px;
+  margin-bottom: 5px;
+}
+
+.project-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 3px;
+  border-radius: 0 0 5px 5px; /* Coins inférieurs arrondis */
+  height: 19pc; /* Ajustez la hauteur en conséquence */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-content h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0;
+  margin-top: 11px;
+}
+.back-img {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.description {
+  color: white;
+  font-size: 1.1rem;
+  margin: 9px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: -16pc;
+  width: 99%;
+  height: 172px;
+}
+
+.github-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 0px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px; /* Ajustez la marge en conséquence */
+}
+
+.github-button:hover {
+  background-color: #0056b3;
+}
+
 .project-title {
   font-size: 1.4rem;
   margin: 10px 0;
@@ -91,21 +163,7 @@ img {
 .project-description {
   margin: 10px 0;
 }
-.project-content {
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.7);
-  margin-top: -11px;
-  height: 248px;
-  width: 248px;
-  border-radius: 1%;
-  margin-left: -11px;
-}
 
-.project-content h3 {
-  color: white;
-  font-size: 1.5rem;
-  margin: 0;
-}
 a {
   display: block;
   color: green;
@@ -346,31 +404,6 @@ a {
   margin-left: 10px;
 }
 
-.project-card {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 10px;
-  padding: 10px;
-  text-align: center;
-  max-width: 250px;
-  box-shadow: 20px 19px 3px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  width: 100%;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.project-card img {
-  max-width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.description {
-  font-size: 10px;
-}
-
 .project-title {
   font-size: 1.4rem;
   margin: 10px 0;
@@ -414,21 +447,7 @@ a {
   filter: grayscale(100%);
   transform: rotate(10deg);
 }
-.github-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 6px 0px;
-  border-radius: 5px;
-  text-decoration: none;
-  cursor: pointer;
-  width: 80%;
-  margin-left: 10%;
-}
 
-.github-button:hover {
-  background-color: #0056b3;
-}
 /*Particle*/
 /* ---- reset ---- */
 
@@ -538,14 +557,19 @@ button:hover {
   background-color: #f5f5f5;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 3%;
+  width: 92%;
+  justify-content: center;
 }
 
 .about-section {
-  margin: 20px 0;
+  margin: 20px 27px;
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 10px;
+  width: 500px;
 }
 
 .about-section h2 {

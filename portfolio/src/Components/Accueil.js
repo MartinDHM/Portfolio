@@ -35,7 +35,6 @@ function Accueil() {
       <section className="projets-recents">
         <div id="portfolio">
           <div className="projets-recents-content">
-            <h2 className="projets-title">Mes Projets :</h2>
             <GitHubProjects />
           </div>
         </div>
