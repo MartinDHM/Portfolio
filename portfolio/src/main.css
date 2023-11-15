@@ -750,26 +750,35 @@ button:hover {
   .contact-form {
     margin: 24pc 0 0 23%;
   }
+  .Présentation {
+    position: absolute;
+    left: 23%;
+    top: 36%;
+    letter-spacing: 3rem;
+    font-size: 3rem;
+    width: 63%;
+  }
   .moi {
     font-size: 14px;
-    margin-top: -14pc;
+    margin-top: -16pc;
     letter-spacing: 25px;
     margin-left: -10px;
     width: 100%;
   }
   .client {
-    font-size: 12px;
-    letter-spacing: 0;
-    margin-top: -59px;
-    margin-left: 10px;
-    margin-bottom: 4pc;
+    width: 100%;
+    font-size: 11px;
+    margin-left: -3px;
+    letter-spacing: 3.5px;
+    margin-top: 52%;
   }
   .interactive-portrait img {
     position: absolute;
-    right: 5%;
-    top: 9%;
+    right: 37%;
+    top: 15%;
     height: 146px;
   }
+
   #particles-js {
     height: 47%;
   }
@@ -777,7 +786,8 @@ button:hover {
     font-size: 0.75rem;
     letter-spacing: 10px;
     margin-bottom: 5pc;
-    margin-left: 0;
+    margin-left: -37px;
+    width: 111%;
   }
   a {
     font-size: 22px;
@@ -790,7 +800,7 @@ button:hover {
     width: 78%;
   }
   .Contact-me {
-    margin-left: 62px;
+    margin-left: -10px;
     font-size: 20px;
   }
   .contact-button {
