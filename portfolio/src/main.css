@@ -99,7 +99,7 @@ img {
   height: 152px;
   border-radius: 29%;
   width: 161px;
-  margin-top: 9px;
+  margin-top: 8px;
   margin-bottom: 5px;
 }
 
@@ -765,7 +765,7 @@ button:hover {
   }
   .moi {
     font-size: 14px;
-    margin-top: -16pc;
+    margin-top: -18pc;
     letter-spacing: 25px;
     margin-left: -10px;
     width: 100%;
@@ -781,7 +781,7 @@ button:hover {
   .interactive-portrait img {
     position: absolute;
     right: 39%;
-    top: 16%;
+    top: 17%;
     height: 117px;
   }
 
