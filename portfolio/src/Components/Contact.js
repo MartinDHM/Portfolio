@@ -1,11 +1,14 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 function Contact() {
   const form = useRef();
+  const [isSent, setIsSent] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     emailjs
       .sendForm(
@@ -17,11 +20,15 @@ function Contact() {
       .then(
         (result) => {
           console.log(result.text);
+          setIsSent(true);
         },
         (error) => {
           console.log(error.text);
         }
-      );
+      )
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   return (
@@ -42,26 +49,50 @@ function Contact() {
       <div className="contact-form">
         <h2>Contactez-moi</h2>
         <div className="form-container">
-          <form ref={form} onSubmit={sendEmail}>
-            <div className="form-group">
-              <label htmlFor="user_name">Nom :</label>
-              <input type="text" id="user_name" name="user_name" required />
+          {isLoading ? (
+            <div className="loading-container">
+              <p className="loading-message">Envoi en cours...</p>
+              <div className="loader"></div>
             </div>
-            <div className="form-group">
-              <label htmlFor="user_email">E-mail :</label>
-              <input type="email" id="user_email" name="user_email" required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Message :</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                required
-              ></textarea>
-            </div>
-            <input type="submit" value="Envoyer" className="contact-button" />
-          </form>
+          ) : isSent ? (
+            <p className="confirmation-message">
+              Votre message a été envoyé avec succès!
+            </p>
+          ) : (
+            <form ref={form} onSubmit={sendEmail}>
+              <div className="form-group">
+                <label htmlFor="user_name">Nom :</label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="user_name"
+                  placeholder="Full Name"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="user_email">E-mail :</label>
+                <input
+                  type="email"
+                  id="email_id"
+                  name="user_email"
+                  placeholder="Email Id"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="message">Message :</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="Message"
+                  required
+                ></textarea>
+              </div>
+              <input type="submit" value="Envoyer" className="contact-button" />
+            </form>
+          )}
         </div>
       </div>
     </section>
