@@ -126,10 +126,11 @@ img {
   color: white;
   font-size: 0.9rem;
   text-overflow: ellipsis;
-  width: 99%;
   height: 114px;
   overflow: hidden;
   margin-top: -3px;
+  text-align: justify;
+  padding: 1rem;
 }
 
 .github-button {
@@ -377,6 +378,10 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  border-bottom: 1px solid lightgray;
 }
 
 .hello {
