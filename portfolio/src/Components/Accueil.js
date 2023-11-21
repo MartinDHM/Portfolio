@@ -5,6 +5,7 @@ import InteractivePortrait from "./Interactive";
 import ParticleContainer from "./Background/Particule";
 import Contact from "./Contact";
 import AboutMe from "./About";
+import { Link } from "react-scroll";
 
 function Accueil() {
   return (
@@ -25,9 +26,16 @@ function Accueil() {
                 interfaces web élégantes et performantes qui captivent
                 l'audience et améliorent l'expérience utilisateur.
               </p>
-              <a className="Contact-me" href="#contact">
+              <Link
+                to="contact" // ID de la partie à faire défiler
+                spy={true}
+                smooth={true}
+                offset={-70} // Ajustez l'offset selon vos besoins
+                duration={500}
+                className="Contact-me"
+              >
                 Contactez-moi
-              </a>{" "}
+              </Link>
             </div>
           </div>
         </div>

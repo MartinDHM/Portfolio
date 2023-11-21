@@ -141,7 +141,7 @@ const GitHubProjects = () => {
       <h2 className="projets-title">Mes Projets :</h2>
       <div>
         {projectsGroups.length > 0 && (
-          <div>
+          <div className="Slider-content">
             <div className="slider-group">
               {projectsGroups[currentPage].map((project, index) => (
                 <div
@@ -176,7 +176,7 @@ const GitHubProjects = () => {
                       </p>
                       {hoveredProjectIndex === index &&
                         projectLinks[project.name] && (
-                          <div>
+                          <div className="github-position">
                             {projectLinks[project.name].githubPages && (
                               <a
                                 href={projectLinks[project.name].githubPages}
