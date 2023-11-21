@@ -170,11 +170,12 @@ img {
   margin: 10px 0;
 }
 .technologies {
+  color: #000;
+  display: flex;
   gap: 1.5rem;
   justify-content: center;
-  display: flex;
-  color: #000;
   margin-top: -1pc;
+  flex-wrap: wrap;
 }
 
 .technology {
@@ -521,7 +522,6 @@ canvas {
 .Présentation {
   position: absolute;
   left: 2%;
-  top: 32%;
   letter-spacing: 1rem;
   font-size: 3rem;
   width: 63%;
@@ -563,6 +563,10 @@ form {
   display: flex;
   flex-direction: column;
   text-align: initial;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
 }
 
 label {
@@ -646,7 +650,7 @@ button:hover {
   transition: background-color 0.3s, transform 0.2s;
   margin-top: 20px;
   width: 80%;
-  margin-left: 8%;
+  margin-left: 11%;
 }
 
 .contact-button:hover {
@@ -700,9 +704,7 @@ button:hover {
   #particles-js {
     height: 41%;
   }
-  .moi {
-    margin-top: -12rem;
-  }
+
   .projets-title {
     display: none;
   }
@@ -746,9 +748,7 @@ button:hover {
   .slider-group {
     margin-top: 13%;
   }
-  .Présentation {
-    top: 35%;
-  }
+
   .projets-recents-content {
     height: 75rem;
   }
@@ -773,7 +773,6 @@ button:hover {
     top: -15%;
   }
   .moi {
-    margin-top: -13rem;
     font-size: 15px;
   }
   .client {
@@ -856,21 +855,20 @@ button:hover {
     font-size: 14px;
     margin-top: -18pc;
     letter-spacing: 25px;
-    margin-left: -10px;
+    margin-left: -7px;
     width: 100%;
   }
   .client {
     font-size: 10px;
     letter-spacing: 3.5px;
     margin-left: -13px;
-    margin-top: 46%;
     width: 100%;
     text-align: center;
   }
   .interactive-portrait img {
     height: 109px;
     position: absolute;
-    right: 39%;
+    right: 41%;
     top: 18%;
   }
 
@@ -879,10 +877,10 @@ button:hover {
   }
   .work {
     font-size: 0.75rem;
-    letter-spacing: 10px;
-    margin-bottom: 5pc;
-    margin-left: -37px;
-    width: 111%;
+    letter-spacing: 3px;
+    margin-bottom: 10pc;
+    margin-left: -25px;
+    width: 100%;
   }
   a {
     font-size: 22px;
@@ -900,7 +898,7 @@ button:hover {
     letter-spacing: 11.5px;
     margin-top: 10%;
     width: 100%;
-    margin-left: -22px;
+    margin-left: -16px;
   }
   .contact-button {
     margin-left: 0%;
@@ -917,7 +915,7 @@ button:hover {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 76%;
+    margin-top: 91%;
   }
   .projets-recents-content {
     height: auto;
