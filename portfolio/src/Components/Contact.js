@@ -61,22 +61,22 @@ function Contact() {
           ) : (
             <form ref={form} onSubmit={sendEmail}>
               <div className="form-group">
-                <label htmlFor="user_name">Nom :</label>
+                <label htmlFor="fullName">Nom :</label>
                 <input
                   type="text"
                   id="fullName"
                   name="user_name"
-                  placeholder="Full Name"
+                  placeholder="Nom complet"
                   required
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="user_email">E-mail :</label>
+                <label htmlFor="email_id">E-mail :</label>
                 <input
                   type="email"
                   id="email_id"
                   name="user_email"
-                  placeholder="Email Id"
+                  placeholder="E-mail"
                   required
                 />
               </div>

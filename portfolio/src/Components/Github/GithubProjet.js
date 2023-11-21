@@ -22,22 +22,46 @@ const projectImages = {
 };
 
 const projectDescriptions = {
-  Portfolio:
-    "Bienvenue sur mon portfolio en ligne ! Vous pouvez explorer mes projets, compétences et expériences professionnelles ici.Aperçu Dans ce portfolio, vous trouverez une variété de projets que j'ai réalisés au fil des années. Ces projets couvrent différents domaines, notamment le développement web, la conception graphique, et bien plus encore",
-  "Print-it":
-    "Ce projet a été créé pour m'immerger dans le monde du langage JavaScript, une technologie appréciée par la communauté des développeurs web. Il a été élaboré de manière éducative, m'aidant à maîtriser les fondements de ce langage dynamique.",
-  ArchiWebos:
-    "Après avoir récemment terminé mon dernier projet et disposant de temps libre, j'ai eu l'opportunité passionnante d'être détaché en renfort auprès d'une équipe dédiée à la création du site portfolio d'une architecte d'intérieur de grand talent, Sophie Bluel. 🏠✨",
-  "Kasa-App":
-    "Kasa ma recruté en tant que développeur front-end en freelance pour développer sa toute nouvelle plateforme web. Kasa est un acteur majeur de la location d'appartements entre particuliers en France depuis près de 10 ans, avec plus de 500 annonces postées chaque jour. Cette opportunité représente un ajout précieux à mon portfolio de freelance !",
-  NinaCarducci:
-    "En tant que développeur freelance, je me lance dans l'offre de services d'optimisation SEO à de nouveaux clients. J'ai analysé plusieurs sites web, contacté les administrateurs des sites ayant un potentiel d'optimisation pour leur proposer mes services. Parmi mes prospects se trouve le site de Nina Carducci, une photographe recommandée par un ami.",
-  "724events":
-    "724events a sollicité mon expertise pour compléter une mission passionnante. Ils ont l'intention de lancer la nouvelle version de leur site vitrine, une page unique au design validé. Bien que le site soit fonctionnel, quelques bugs subsistent, affectant l'expérience des visiteurs. Mon rôle est d'intervenir et de résoudre ces problèmes pour assurer le succès du projet.",
-  ArgentBankApp:
-    "Rejoins Argent Bank en tant que développeur front-end. Nouvelle banque en ligne qui vise à se démarquer dans le secteur bancaire. En collaboration avec Mila, la cheffe de projet, je travaille sur la création du tableau de bord des utilisateurs. Nous recevons deux courriers électroniques du CTO, Avery Moreau.",
-  Ohmyfood:
-    'Projet "OhMyFood", vise à regrouper les menus de restaurants gastronomiques et à proposer bien plus que une simple réservation. Les clients auront la liberté de personnaliser leur menu, et leurs plats seront prêts dès leur arrivée, éliminant ainsi les interminables attentes au restaurant.',
+  Portfolio: {
+    description:
+      "Bienvenue sur mon portfolio en ligne ! Vous pouvez explorer mes projets, compétences et expériences professionnelles ici. Aperçu Dans ce portfolio, vous trouverez une variété de projets que j'ai réalisés au fil des années. Ces projets couvrent différents domaines, notamment le développement web, la conception graphique, et bien plus encore",
+    technologies: ["#React", "#JavaScript", "#CSS", "#ParticuleJs"],
+  },
+  "Print-it": {
+    description:
+      "Ce projet a été créé pour m'immerger dans le monde du langage JavaScript, une technologie appréciée par la communauté des développeurs web. Il a été élaboré de manière éducative, m'aidant à maîtriser les fondements de ce langage dynamique.",
+    technologies: ["#HTML", "#CSS", "#JavaScript"],
+  },
+  ArchiWebos: {
+    description:
+      "Après avoir récemment terminé mon dernier projet et disposant de temps libre, j'ai eu l'opportunité passionnante d'être détaché en renfort auprès d'une équipe dédiée à la création du site portfolio d'une architecte d'intérieur de grand talent, Sophie Bluel. 🏠✨",
+    technologies: ["#HTML", "#CSS", "#JavaScript"],
+  },
+  "Kasa-App": {
+    description:
+      "Kasa ma recruté en tant que développeur front-end en freelance pour développer sa toute nouvelle plateforme web. Kasa est un acteur majeur de la location d'appartements entre particuliers en France depuis près de 10 ans, avec plus de 500 annonces postées chaque jour. Cette opportunité représente un ajout précieux à mon portfolio de freelance !",
+    technologies: ["#React", "#Animation CSS", "#Sass", "#Javascript"],
+  },
+  NinaCarducci: {
+    description:
+      "En tant que développeur freelance, je me lance dans l'offre de services d'optimisation SEO à de nouveaux clients. J'ai analysé plusieurs sites web, contacté les administrateurs des sites ayant un potentiel d'optimisation pour leur proposer mes services. Parmi mes prospects se trouve le site de Nina Carducci, une photographe recommandée par un ami.",
+    technologies: ["#HTML", "#CSS", "#SEO"],
+  },
+  "724events": {
+    description:
+      "724events a sollicité mon expertise pour compléter une mission passionnante. Ils ont l'intention de lancer la nouvelle version de leur site vitrine, une page unique au design validé. Bien que le site soit fonctionnel, quelques bugs subsistent, affectant l'expérience des visiteurs. Mon rôle est d'intervenir et de résoudre ces problèmes pour assurer le succès du projet.",
+    technologies: ["#HTML", "#JavaScript", "#Api"],
+  },
+  ArgentBankApp: {
+    description:
+      "Rejoins Argent Bank en tant que développeur front-end. Nouvelle banque en ligne qui vise à se démarquer dans le secteur bancaire. En collaboration avec Mila, la cheffe de projet, je travaille sur la création du tableau de bord des utilisateurs. Nous recevons deux courriers électroniques du CTO, Avery Moreau.",
+    technologies: ["#React", "#REDUX", "#HTML", "#CSS", "#Api"],
+  },
+  Ohmyfood: {
+    description:
+      'Projet "OhMyFood", vise à regrouper les menus de restaurants gastronomiques et à proposer bien plus que une simple réservation. Les clients auront la liberté de personnaliser leur menu, et leurs plats seront prêts dès leur arrivée, éliminant ainsi les interminables attentes au restaurant.',
+    technologies: ["#HTML", "#Sass", "#Animation CSS"],
+  },
 };
 
 const projectLinks = {
@@ -73,6 +97,7 @@ const projectLinks = {
 const GitHubProjects = () => {
   const [projects, setProjects] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
+  const [hoveredProjectIndex, setHoveredProjectIndex] = useState(null);
 
   useEffect(() => {
     fetch("https://api.github.com/users/MartinDHM/repos")
@@ -103,6 +128,14 @@ const GitHubProjects = () => {
     }
   };
 
+  const handleMouseEnter = (index) => {
+    setHoveredProjectIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredProjectIndex(null);
+  };
+
   return (
     <section>
       <h2 className="projets-title">Mes Projets :</h2>
@@ -110,43 +143,60 @@ const GitHubProjects = () => {
         {projectsGroups.length > 0 && (
           <div>
             <div className="slider-group">
-              {projectsGroups[currentPage].map((project) => (
-                <div key={project.id} className="project-card">
-                  <div className="back-img">
+              {projectsGroups[currentPage].map((project, index) => (
+                <div
+                  key={project.id}
+                  className="project-card"
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <div className="project-content">
                     <img
                       className="project-img"
                       src={projectImages[project.name]}
                       alt={project.name}
                     />
-                  </div>
-                  <div className="project-content">
-                    <h3>{project.name}</h3>
+                    <h3 className="projet-title">{project.name}</h3>
                     <div>
                       <p className="description">
-                        {projectDescriptions[project.name]}
+                        {projectDescriptions[project.name].description}
                       </p>
-                      {projectLinks[project.name] && (
-                        <div>
-                          {projectLinks[project.name].githubPages && (
+                      <p className="technologies">
+                        {projectDescriptions[project.name].technologies.map(
+                          (tech, index) => (
+                            <span key={index} className="technology">
+                              {tech}
+                              {index <
+                                projectDescriptions[project.name].technologies
+                                  .length -
+                                  1 && <span className="separator"> </span>}
+                            </span>
+                          )
+                        )}
+                      </p>
+                      {hoveredProjectIndex === index &&
+                        projectLinks[project.name] && (
+                          <div>
+                            {projectLinks[project.name].githubPages && (
+                              <a
+                                href={projectLinks[project.name].githubPages}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="github-button github-pages-button"
+                              >
+                                Voir les GitHub Pages
+                              </a>
+                            )}
                             <a
-                              href={projectLinks[project.name].githubPages}
+                              href={projectLinks[project.name].github}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="github-button github-pages-button"
+                              className="github-button"
                             >
-                              Voir les GitHub Pages
+                              Voir sur GitHub
                             </a>
-                          )}
-                          <a
-                            href={projectLinks[project.name].github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="github-button"
-                          >
-                            Voir sur GitHub
-                          </a>
-                        </div>
-                      )}
+                          </div>
+                        )}
                     </div>
                   </div>
                 </div>

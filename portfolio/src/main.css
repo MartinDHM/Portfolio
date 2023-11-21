@@ -97,11 +97,12 @@ img {
 }
 
 .project-img {
-  height: 152px;
+  height: 150px;
   border-radius: 29%;
-  width: 161px;
-  margin-top: 8px;
-  margin-bottom: 5px;
+  width: 150px;
+  margin-top: 13px;
+  margin-bottom: 1px;
+  margin-left: 34%;
 }
 
 .project-content {
@@ -112,7 +113,7 @@ img {
   background: rgba(0, 0, 0, 0.7);
   padding: 3px;
   border-radius: 0 0 5px 5px; /* Coins inférieurs arrondis */
-  height: 19pc; /* Ajustez la hauteur en conséquence */
+  height: 30pc;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -123,20 +124,19 @@ img {
   color: white;
   font-size: 1.5rem;
   margin: 0;
-  margin-top: 11px;
+  margin-top: -16pc;
 }
 .back-img {
   background-color: rgba(0, 0, 0, 0.7);
 }
 .description {
   color: white;
-  font-size: 1.1rem;
-  margin: 9px 0;
+  font-size: 1rem;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-top: -16pc;
   width: 99%;
-  height: 172px;
+  height: 160px;
 }
 
 .github-button {
@@ -154,6 +154,18 @@ img {
 .github-button:hover {
   background-color: #0056b3;
 }
+.project-card:hover .github-button {
+  opacity: 1;
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 .project-title {
   font-size: 1.4rem;
@@ -164,7 +176,28 @@ img {
 .project-description {
   margin: 10px 0;
 }
+.technologies {
+  text-align: center;
+  margin-left: 20%;
+  color: black;
+  padding: 10px 6px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 20px;
+  background: white;
+  width: 58%;
+}
 
+.technology {
+  margin-right: 5px;
+}
+
+.separator {
+  margin-left: 5%;
+}
 a {
   display: block;
   color: green;
@@ -374,7 +407,7 @@ a {
 }
 .animation-content {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin-right: 15rem;
 }
 
@@ -482,7 +515,6 @@ canvas {
   width: 100%;
   height: 76%;
   background-color: #f7f7f7;
-  background-image: url("");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -578,7 +610,7 @@ button:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-wrap: wrap;
-  margin: 0px 3%;
+  margin: 0px 5%;
   width: 92%;
   justify-content: center;
 }
@@ -645,6 +677,12 @@ button:hover {
   .project-content {
     bottom: 0;
   }
+  .projets-recents-content {
+    height: 68rem;
+  }
+  .slider-group {
+    margin-top: 13%;
+  }
 }
 @media screen and (max-width: 1364px) {
   .interactive-portrait img {
@@ -684,6 +722,9 @@ button:hover {
   .project-content {
     bottom: 0;
   }
+  .projets-recents-content {
+    height: 68rem;
+  }
 }
 @media screen and (max-width: 1140px) {
   .Title {
@@ -695,6 +736,18 @@ button:hover {
   }
   .project-content {
     bottom: 0;
+  }
+  .projets-recents-content {
+    height: 74rem;
+  }
+  .slider-group {
+    margin-top: 13%;
+  }
+  .Présentation {
+    top: 27%;
+  }
+  .projets-recents-content {
+    height: 75rem;
   }
 }
 
@@ -754,6 +807,9 @@ button:hover {
   .project-content {
     bottom: 0;
   }
+  .projets-recents-content {
+    height: 97rem;
+  }
 }
 @media screen and (max-width: 934px) {
   .interactive-portrait img {
@@ -761,6 +817,9 @@ button:hover {
   }
   .project-content {
     bottom: 0;
+  }
+  .projets-recents-content {
+    height: 97rem;
   }
 }
 
@@ -802,7 +861,7 @@ button:hover {
     height: 109px;
     position: absolute;
     right: 40%;
-    top: 16%;
+    top: 18%;
   }
 
   #particles-js {
@@ -836,14 +895,25 @@ button:hover {
   .contact-button {
     margin-left: 0%;
   }
-  .slider-group {
-    margin-top: 23pc;
-  }
+
   .projets-title {
     display: none;
   }
   .project-content {
     bottom: 0;
+  }
+  .slider-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 76%;
+  }
+  .projets-recents-content {
+    height: 97rem;
+  }
+  .project-img {
+    margin: 0 auto;
   }
 }
 @media screen and (max-width: 440px) {
@@ -857,5 +927,8 @@ button:hover {
   .client {
     margin-left: -18px;
     margin-top: 60%;
+  }
+  .projets-recents-content {
+    height: 97rem;
   }
 }
