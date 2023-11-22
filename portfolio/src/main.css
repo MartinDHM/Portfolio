@@ -565,6 +565,9 @@ canvas {
 form {
   display: flex;
   flex-direction: column;
+  width: 80%;
+  justify-content: center;
+  padding-left: 10%;
 }
 
 .form-group {
@@ -659,7 +662,7 @@ button:hover {
   transition: background-color 0.3s, transform 0.2s;
   margin-top: 20px;
   width: 80%;
-  margin-left: 11%;
+  margin-left: 9%;
 }
 
 .contact-button:hover {
@@ -731,13 +734,16 @@ button:hover {
   }
 
   .contact-form {
-    margin: 194px 0px -300px 22pc;
+    margin-top: 25%;
   }
   .project-content {
     bottom: 0;
   }
   .projets-recents-content {
     height: 68rem;
+  }
+  form {
+    padding-left: 9%;
   }
 }
 @media screen and (max-width: 1140px) {
@@ -769,6 +775,9 @@ button:hover {
   .github-button {
     opacity: 1;
   }
+  .contact-button {
+    margin-left: 10%;
+  }
 }
 
 @media screen and (max-width: 935px) {
@@ -777,7 +786,7 @@ button:hover {
     font-size: 15px;
   }
   .contact-form {
-    margin-left: 12pc;
+    margin-left: 23%;
     top: -20pc;
     margin-top: 14rem;
   }
@@ -809,7 +818,7 @@ button:hover {
     margin-left: -51px;
   }
   .contact-button {
-    margin-left: 4%;
+    margin-left: 11%;
   }
   .nav {
     display: none;
@@ -855,7 +864,7 @@ button:hover {
     font-size: 9px;
   }
   .contact-form {
-    margin: 24pc 0 0 23%;
+    margin-top: 66%;
   }
   .Présentation {
     position: absolute;
@@ -916,7 +925,7 @@ button:hover {
     margin-left: -16px;
   }
   .contact-button {
-    margin-left: 0%;
+    margin-left: 12%;
   }
 
   .projets-title {
@@ -942,6 +951,9 @@ button:hover {
     margin-right: 0;
     justify-content: center;
   }
+  form {
+    padding-left: 8%;
+  }
 }
 @media screen and (max-width: 440px) {
   .Contact-me {
@@ -950,6 +962,10 @@ button:hover {
     margin-top: 1%;
     width: 100%;
     margin-left: -22px;
+  }
+  .contact-form {
+    margin-top: 100%;
+    margin-left: 21%;
   }
   .client {
     margin-left: -18px;
