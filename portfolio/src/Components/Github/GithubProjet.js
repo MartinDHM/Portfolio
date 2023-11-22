@@ -97,7 +97,6 @@ const projectLinks = {
 const GitHubProjects = () => {
   const [projects, setProjects] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
-  const [hoveredProjectIndex, setHoveredProjectIndex] = useState(null);
 
   useEffect(() => {
     fetch("https://api.github.com/users/MartinDHM/repos")
@@ -128,14 +127,6 @@ const GitHubProjects = () => {
     }
   };
 
-  const handleMouseEnter = (index) => {
-    setHoveredProjectIndex(index);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredProjectIndex(null);
-  };
-
   return (
     <section>
       <h2 className="projets-title">Mes Projets :</h2>
@@ -144,12 +135,7 @@ const GitHubProjects = () => {
           <div className="Slider-content">
             <div className="slider-group">
               {projectsGroups[currentPage].map((project, index) => (
-                <div
-                  key={project.id}
-                  className="project-card"
-                  onMouseEnter={() => handleMouseEnter(index)}
-                  onMouseLeave={handleMouseLeave}
-                >
+                <div key={project.id} className="project-card">
                   <div className="project-content">
                     <img
                       className="project-img"
@@ -174,29 +160,28 @@ const GitHubProjects = () => {
                           )
                         )}
                       </p>
-                      {hoveredProjectIndex === index &&
-                        projectLinks[project.name] && (
-                          <div className="github-position">
-                            {projectLinks[project.name].githubPages && (
-                              <a
-                                href={projectLinks[project.name].githubPages}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="github-button github-pages-button"
-                              >
-                                Voir les GitHub Pages
-                              </a>
-                            )}
+                      {projectLinks[project.name] && (
+                        <div className="github-position">
+                          {projectLinks[project.name].githubPages && (
                             <a
-                              href={projectLinks[project.name].github}
+                              href={projectLinks[project.name].githubPages}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="github-button"
+                              className="github-button github-pages-button"
                             >
-                              Voir sur GitHub
+                              Voir les GitHub Pages
                             </a>
-                          </div>
-                        )}
+                          )}
+                          <a
+                            href={projectLinks[project.name].github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="github-button"
+                          >
+                            Voir sur GitHub
+                          </a>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
