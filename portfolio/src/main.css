@@ -883,7 +883,7 @@ button:hover {
     height: 109px;
     position: absolute;
     right: 41%;
-    top: 18%;
+    top: 15%;
   }
 
   #particles-js {
@@ -953,7 +953,7 @@ button:hover {
   }
   .client {
     margin-left: -18px;
-    margin-top: 62%;
+    margin-top: 57%;
     line-height: 1;
   }
   .projets-recents-content {
@@ -961,5 +961,8 @@ button:hover {
   }
   .description {
     font-size: 12px;
+  }
+  .work {
+    margin-bottom: 0;
   }
 }
