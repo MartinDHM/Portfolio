@@ -874,10 +874,10 @@ button:hover {
   }
   .client {
     font-size: 10px;
-    letter-spacing: 3.5px;
+    letter-spacing: 1.5px;
     margin-left: -13px;
     width: 100%;
-    text-align: center;
+    text-align: justify;
   }
   .interactive-portrait img {
     height: 109px;
@@ -955,6 +955,7 @@ button:hover {
     margin-left: -18px;
     margin-top: 57%;
     line-height: 1;
+    text-align: justify;
   }
   .projets-recents-content {
     height: 97rem;
