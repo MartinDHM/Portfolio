@@ -134,7 +134,7 @@ const GitHubProjects = () => {
         {projectsGroups.length > 0 && (
           <div className="Slider-content">
             <div className="slider-group">
-              {projectsGroups[currentPage].map((project, index) => (
+              {projectsGroups[currentPage].map((project) => (
                 <div key={project.id} className="project-card">
                   <div className="project-content">
                     <img
