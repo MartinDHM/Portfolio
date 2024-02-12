@@ -697,12 +697,6 @@ button:hover {
   color: #666;
 }
 
-.about-section:hover {
-  background-color: #e6f7ff;
-  border-radius: 10px;
-  padding: 10px;
-  transition: background-color 0.3s ease;
-}
 .contact-button {
   background-color: white;
   color: black;
@@ -966,7 +960,6 @@ button:hover {
   .github-button {
     font-size: 11px;
     width: 78%;
-   
   }
 
   .Contact-me {
