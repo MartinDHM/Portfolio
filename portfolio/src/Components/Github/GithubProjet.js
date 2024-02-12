@@ -9,6 +9,7 @@ import projet9 from "../../assets/projet9.webp";
 import projet10 from "../../assets/projet10.webp";
 import projet11 from "../../assets/projet11.webp";
 import projet12 from "../../assets/projet12.webp";
+import kameha from "../../assets/kameha.webp";
 
 const projectImages = {
   Portfolio: projet12,
@@ -19,6 +20,7 @@ const projectImages = {
   "724events": projet10,
   ArgentBankApp: projet11,
   Ohmyfood: projet3,
+  KamehaMaisSpam: kameha,
 };
 
 const projectDescriptions = {
@@ -62,6 +64,11 @@ const projectDescriptions = {
       'Projet "OhMyFood", vise à regrouper les menus de restaurants gastronomiques et à proposer bien plus que une simple réservation. Les clients auront la liberté de personnaliser leur menu, et leurs plats seront prêts dès leur arrivée, éliminant ainsi les interminables attentes au restaurant.',
     technologies: ["#HTML", "#Sass", "#Animation CSS"],
   },
+  KamehaMaisSpam: {
+    description:
+      "Plongez dans un univers collaboratif passionnant où les mondes des jeux vidéo et des animés se rencontrent ! Notre projet, imprégné de notre passion commune pour ces domaines captivants.",
+    technologies: ["#HTML", "#CSS", "#Unity"],
+  },
 };
 
 const projectLinks = {
@@ -91,6 +98,10 @@ const projectLinks = {
   },
   ArgentBankApp: {
     github: "https://github.com/MartinDHM/ArgentBankApp",
+  },
+  KamehaMaisSpam: {
+    github: "https://github.com/MartinDHM/KamehaMaisSpam",
+    githubPages: "http://kamehamaispam.fr",
   },
 };
 
@@ -150,13 +161,13 @@ const GitHubProjects = () => {
                       <p className="technologies">
                         {projectDescriptions[project.name].technologies.map(
                           (tech, index) => (
-                            <span key={index} className="technology">
+                            <div key={index} className="technology">
                               {tech}
                               {index <
                                 projectDescriptions[project.name].technologies
                                   .length -
-                                  1 && <span className="separator"> </span>}
-                            </span>
+                                  1 && <div className="separator"> </div>}
+                            </div>
                           )
                         )}
                       </p>
@@ -167,18 +178,18 @@ const GitHubProjects = () => {
                               href={projectLinks[project.name].githubPages}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="github-button github-pages-button"
+                              className="github-button btn-3"
                             >
-                              Voir les GitHub Pages
+                              <span>Voir les GitHub Pages</span>
                             </a>
                           )}
                           <a
                             href={projectLinks[project.name].github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="github-button"
+                            className="github-button btn-3"
                           >
-                            Voir sur GitHub
+                            <span> Voir sur GitHub</span>
                           </a>
                         </div>
                       )}
