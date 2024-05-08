@@ -10,6 +10,7 @@ import projet10 from "../../assets/projet10.webp";
 import projet11 from "../../assets/projet11.webp";
 import projet12 from "../../assets/projet12.webp";
 import kameha from "../../assets/kameha.webp";
+import tmbarbe from "../../assets/tm.webp";
 
 const projectImages = {
   Portfolio: projet12,
@@ -21,6 +22,7 @@ const projectImages = {
   ArgentBankApp: projet11,
   Ohmyfood: projet3,
   KamehaMaisSpam: kameha,
+  TmBarber: tmbarbe,
 };
 
 const projectDescriptions = {
@@ -69,6 +71,11 @@ const projectDescriptions = {
       "Plongez dans un univers collaboratif passionnant où les mondes des jeux vidéo et des animés se rencontrent ! Notre projet, imprégné de notre passion commune pour ces domaines captivants.",
     technologies: ["#HTML", "#CSS", "#Unity"],
   },
+  TmBarber: {
+    description:
+      "Ici un des projet sur lequel je suis le plus fier, ce projet à été réalisé pour un barber , j'y ai appris beaucoup de chose notamment approndir mon experience dans la conception de base de données et la creation d'API. ",
+    technologies: ["#HTML", "#CSS", "#ReactJS", "#ExpressJS", "#MySQL"],
+  },
 };
 
 const projectLinks = {
@@ -101,7 +108,10 @@ const projectLinks = {
   },
   KamehaMaisSpam: {
     github: "https://github.com/MartinDHM/KamehaMaisSpam",
-    githubPages: "http://kamehamaispam.fr",
+    githubPages: "https://martindhm.github.io/KamehaMaisSpam/",
+  },
+  TmBarber: {
+    githubPages: "https://www.tm-barber.com",
   },
 };
 
@@ -180,7 +190,7 @@ const GitHubProjects = () => {
                               rel="noopener noreferrer"
                               className="github-button btn-3"
                             >
-                              <span>Voir les GitHub Pages</span>
+                              <span>Voir le site</span>
                             </a>
                           )}
                           <a
