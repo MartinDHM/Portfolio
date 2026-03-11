@@ -4,7 +4,7 @@ import "../../main.css";
 import projet12 from "../../assets/projet12.webp";
 import kameha from "../../assets/kameha.webp";
 import tmbarbe from "../../assets/tm.webp";
-import discordreact from "../../assets/discordreact.webp";
+import discordreact from "../../assets/DiscordReact.webp";
 
 const projectImages = {
   Portfolio: projet12,
