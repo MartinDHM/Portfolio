@@ -21,7 +21,7 @@ const projectDescriptions = {
   },
   KamehaMaisSpam: {
     description:
-      "Plongez dans un univers collaboratif passionnant où les mondes des jeux vidéo et des animés se rencontrent !",
+      "Création d'un jeu de combat en 2D avec Unity sur une interface web. Apprentissage de la gestion d'animations et de l'intégration web.",
     technologies: ["#HTML", "#CSS", "#Unity"],
   },
   TmBarber: {
@@ -31,7 +31,7 @@ const projectDescriptions = {
   },
   DiscordReact: {
     description:
-      "Clone de Discord avec React, gestion de salons de discussion et messages en temps réel.",
+      "Clone de Discord avec React, gestion de salons et messages en temps réel.",
     technologies: ["#React", "#NodeJS", "#Socket.IO", "#MySQL", "#Auth0"],
   },
 };
@@ -57,22 +57,36 @@ const GitHubProjects = () => {
   const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
-    fetch("https://api.github.com/users/MartinDHM/repos")
-      .then((response) => response.json())
-      .then((data) => {
-        // Fusionner les projets GitHub connus avec les projets locaux manquants
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch(
+          "https://api.github.com/users/MartinDHM/repos",
+        );
+
+        if (!response.ok) {
+          throw new Error("Erreur API GitHub");
+        }
+
+        const data = await response.json();
+
         const localProjectNames = Object.keys(projectDescriptions);
+
         const mergedProjects = localProjectNames.map((name, index) => {
-          // Cherche le repo GitHub correspondant
-          const githubProject = data.find((p) => p.name === name);
-          return githubProject ? githubProject : { id: `local-${index}`, name }; // Créé un objet local si le projet n'existe pas sur GitHub
+          const githubProject = data.find((repo) => repo.name === name);
+
+          return githubProject ? githubProject : { id: `local-${index}`, name };
         });
+
         setProjects(mergedProjects);
-      })
-      .catch((error) => console.error("Erreur fetch GitHub:", error));
+      } catch (error) {
+        console.error("Erreur fetch GitHub:", error);
+      }
+    };
+
+    fetchProjects();
   }, []);
 
-  // Pagination par groupes de 3
+  // Pagination par 3 projets
   const projectsGroups = [];
   for (let i = 0; i < projects.length; i += 3) {
     projectsGroups.push(projects.slice(i, i + 3));
@@ -87,41 +101,49 @@ const GitHubProjects = () => {
   };
 
   return (
-    <section>
+    <section className="projects-section">
       <h2 className="projets-title">Mes Projets :</h2>
-      {projectsGroups.length > 0 ? (
-        <div className="Slider-content">
-          <div className="slider-group">
-            {projectsGroups[currentPage].map((project) => {
-              const name = project.name;
-              const description =
-                projectDescriptions[name]?.description ||
-                "Pas de description disponible.";
-              const technologies =
-                projectDescriptions[name]?.technologies || [];
-              const imageSrc = projectImages[name] || "";
-              const links = projectLinks[name] || {};
 
-              return (
-                <div key={project.id} className="project-card">
-                  <div className="project-content">
+      {projectsGroups.length === 0 ? (
+        <p>Chargement des projets...</p>
+      ) : (
+        <>
+          <div className="Slider-content">
+            <div className="slider-group">
+              {projectsGroups[currentPage].map((project) => {
+                const name = project.name;
+
+                const description =
+                  projectDescriptions[name]?.description ||
+                  "Pas de description disponible.";
+
+                const technologies =
+                  projectDescriptions[name]?.technologies || [];
+
+                const imageSrc = projectImages[name];
+
+                const links = projectLinks[name] || {};
+
+                return (
+                  <div key={project.id || name} className="project-card">
                     {imageSrc && (
                       <img className="project-img" src={imageSrc} alt={name} />
                     )}
-                    <h3 className="projet-title">{name}</h3>
-                    <div>
+
+                    <div className="project-content">
+                      <h3 className="projet-title">{name}</h3>
+
                       <p className="description">{description}</p>
-                      <p className="technologies">
-                        {technologies.map((tech, index) => (
-                          <div key={index} className="technology">
+
+                      <div className="technologies">
+                        {technologies.map((tech) => (
+                          <span key={tech} className="technology">
                             {tech}
-                            {index < technologies.length - 1 && (
-                              <div className="separator"> </div>
-                            )}
-                          </div>
+                          </span>
                         ))}
-                      </p>
-                      {links.github || links.githubPages ? (
+                      </div>
+
+                      {(links.github || links.githubPages) && (
                         <div className="github-position">
                           {links.githubPages && (
                             <a
@@ -130,9 +152,10 @@ const GitHubProjects = () => {
                               rel="noopener noreferrer"
                               className="github-button btn-3"
                             >
-                              <span>Voir le site</span>
+                              Voir le site
                             </a>
                           )}
+
                           {links.github && (
                             <a
                               href={links.github}
@@ -140,36 +163,28 @@ const GitHubProjects = () => {
                               rel="noopener noreferrer"
                               className="github-button btn-3"
                             >
-                              <span className="GithubButton">
-                                Voir sur GitHub
-                              </span>
+                              Voir sur GitHub
                             </a>
                           )}
                         </div>
-                      ) : null}
+                      )}
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
+
           <div className="slider-navigation">
-            <button
-              onClick={handlePrevPage}
-              className="slider-button slider-button-prev"
-            >
+            <button onClick={handlePrevPage} className="slider-button">
               Précédent
             </button>
-            <button
-              onClick={handleNextPage}
-              className="slider-button slider-button-next"
-            >
+
+            <button onClick={handleNextPage} className="slider-button">
               Suivant
             </button>
           </div>
-        </div>
-      ) : (
-        <p>Chargement des projets...</p>
+        </>
       )}
     </section>
   );
