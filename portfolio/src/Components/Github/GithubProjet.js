@@ -140,7 +140,9 @@ const GitHubProjects = () => {
                               rel="noopener noreferrer"
                               className="github-button btn-3"
                             >
-                              <span>Voir sur GitHub</span>
+                              <span className="GithubButton">
+                                Voir sur GitHub
+                              </span>
                             </a>
                           )}
                         </div>
