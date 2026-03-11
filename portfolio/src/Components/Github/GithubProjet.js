@@ -59,17 +59,23 @@ const GitHubProjects = () => {
   useEffect(() => {
     fetch("https://api.github.com/users/MartinDHM/repos")
       .then((response) => response.json())
-      .then((data) => setProjects(data))
+      .then((data) => {
+        // Fusionner les projets GitHub connus avec les projets locaux manquants
+        const localProjectNames = Object.keys(projectDescriptions);
+        const mergedProjects = localProjectNames.map((name, index) => {
+          // Cherche le repo GitHub correspondant
+          const githubProject = data.find((p) => p.name === name);
+          return githubProject ? githubProject : { id: `local-${index}`, name }; // Créé un objet local si le projet n'existe pas sur GitHub
+        });
+        setProjects(mergedProjects);
+      })
       .catch((error) => console.error("Erreur fetch GitHub:", error));
   }, []);
 
-  // Filtrer seulement les projets connus pour éviter les undefined
-  const filteredProjects = projects.filter((p) => projectDescriptions[p.name]);
-
   // Pagination par groupes de 3
   const projectsGroups = [];
-  for (let i = 0; i < filteredProjects.length; i += 3) {
-    projectsGroups.push(filteredProjects.slice(i, i + 3));
+  for (let i = 0; i < projects.length; i += 3) {
+    projectsGroups.push(projects.slice(i, i + 3));
   }
 
   const handleNextPage = () => {
