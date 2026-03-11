@@ -63,10 +63,10 @@ const GitHubProjects = () => {
       .catch((error) => console.error("Erreur fetch GitHub:", error));
   }, []);
 
-  // Filtrer seulement les projets que l'on connaît
+  // Filtrer seulement les projets connus pour éviter les undefined
   const filteredProjects = projects.filter((p) => projectDescriptions[p.name]);
 
-  // Pagination
+  // Pagination par groupes de 3
   const projectsGroups = [];
   for (let i = 0; i < filteredProjects.length; i += 3) {
     projectsGroups.push(filteredProjects.slice(i, i + 3));
