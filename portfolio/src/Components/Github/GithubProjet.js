@@ -16,22 +16,22 @@ const projectImages = {
 const projectDescriptions = {
   Portfolio: {
     description:
-      "Bienvenue sur mon portfolio en ligne ! Vous pouvez explorer mes projets, compétences et expériences professionnelles ici. Aperçu Dans ce portfolio, vous trouverez une variété de projets que j'ai réalisés au fil des années. Ces projets couvrent différents domaines, notamment le développement web, la conception graphique, et bien plus encore",
+      "Bienvenue sur mon portfolio en ligne ! Vous pouvez explorer mes projets, compétences et expériences professionnelles ici.",
     technologies: ["#React", "#JavaScript", "#CSS", "#ParticuleJs"],
   },
   KamehaMaisSpam: {
     description:
-      "Plongez dans un univers collaboratif passionnant où les mondes des jeux vidéo et des animés se rencontrent ! Notre projet, imprégné de notre passion commune pour ces domaines captivants.",
+      "Plongez dans un univers collaboratif passionnant où les mondes des jeux vidéo et des animés se rencontrent !",
     technologies: ["#HTML", "#CSS", "#Unity"],
   },
   TmBarber: {
     description:
-      "Ici un des projet sur lequel je suis le plus fier, ce projet à été réalisé pour un barber , j'y ai appris beaucoup de chose notamment approndir mon experience dans la conception de base de données et la creation d'API. ",
+      "Projet réalisé pour un barber. Apprentissage sur bases de données et création d'API.",
     technologies: ["#HTML", "#CSS", "#ReactJS", "#ExpressJS", "#MySQL"],
   },
   DiscordReact: {
     description:
-      "Développement d’un clone de Discord avec React permettant la gestion de salons de discussion et l’envoi de messages en temps réel.",
+      "Clone de Discord avec React, gestion de salons de discussion et messages en temps réel.",
     technologies: ["#React", "#NodeJS", "#Socket.IO", "#MySQL", "#Auth0"],
   },
 };
@@ -59,9 +59,8 @@ const GitHubProjects = () => {
   useEffect(() => {
     fetch("https://api.github.com/users/MartinDHM/repos")
       .then((response) => response.json())
-      .then((data) => {
-        setProjects(data);
-      });
+      .then((data) => setProjects(data))
+      .catch((error) => console.error("Erreur fetch GitHub:", error));
   }, []);
 
   const projectsGroups = [];
@@ -70,59 +69,53 @@ const GitHubProjects = () => {
   }
 
   const handleNextPage = () => {
-    if (currentPage < projectsGroups.length - 1) {
-      setCurrentPage(currentPage + 1);
-    } else {
-      setCurrentPage(0);
-    }
+    setCurrentPage((prev) => (prev < projectsGroups.length - 1 ? prev + 1 : 0));
   };
 
   const handlePrevPage = () => {
-    if (currentPage > 0) {
-      setCurrentPage(currentPage - 1);
-    } else {
-      setCurrentPage(projectsGroups.length - 1);
-    }
+    setCurrentPage((prev) => (prev > 0 ? prev - 1 : projectsGroups.length - 1));
   };
 
   return (
     <section>
       <h2 className="projets-title">Mes Projets :</h2>
-      <div>
-        {projectsGroups.length > 0 && (
-          <div className="Slider-content">
-            <div className="slider-group">
-              {projectsGroups[currentPage].map((project) => (
+      {projectsGroups.length > 0 ? (
+        <div className="Slider-content">
+          <div className="slider-group">
+            {projectsGroups[currentPage].map((project) => {
+              const name = project.name;
+              const description =
+                projectDescriptions[name]?.description ||
+                "Pas de description disponible.";
+              const technologies =
+                projectDescriptions[name]?.technologies || [];
+              const imageSrc = projectImages[name] || "";
+              const links = projectLinks[name] || {};
+
+              return (
                 <div key={project.id} className="project-card">
                   <div className="project-content">
-                    <img
-                      className="project-img"
-                      src={projectImages[project.name]}
-                      alt={project.name}
-                    />
-                    <h3 className="projet-title">{project.name}</h3>
+                    {imageSrc && (
+                      <img className="project-img" src={imageSrc} alt={name} />
+                    )}
+                    <h3 className="projet-title">{name}</h3>
                     <div>
-                      <p className="description">
-                        {projectDescriptions[project.name].description}
-                      </p>
+                      <p className="description">{description}</p>
                       <p className="technologies">
-                        {projectDescriptions[project.name].technologies.map(
-                          (tech, index) => (
-                            <div key={index} className="technology">
-                              {tech}
-                              {index <
-                                projectDescriptions[project.name].technologies
-                                  .length -
-                                  1 && <div className="separator"> </div>}
-                            </div>
-                          ),
-                        )}
+                        {technologies.map((tech, index) => (
+                          <div key={index} className="technology">
+                            {tech}
+                            {index < technologies.length - 1 && (
+                              <div className="separator"> </div>
+                            )}
+                          </div>
+                        ))}
                       </p>
-                      {projectLinks[project.name] && (
+                      {links.github || links.githubPages ? (
                         <div className="github-position">
-                          {projectLinks[project.name].githubPages && (
+                          {links.githubPages && (
                             <a
-                              href={projectLinks[project.name].githubPages}
+                              href={links.githubPages}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="github-button btn-3"
@@ -130,38 +123,42 @@ const GitHubProjects = () => {
                               <span>Voir le site</span>
                             </a>
                           )}
-                          <a
-                            href={projectLinks[project.name].github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="github-button btn-3"
-                          >
-                            <span> Voir sur GitHub</span>
-                          </a>
+                          {links.github && (
+                            <a
+                              href={links.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="github-button btn-3"
+                            >
+                              <span>Voir sur GitHub</span>
+                            </a>
+                          )}
                         </div>
-                      )}
+                      ) : null}
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
-            <div className="slider-navigation">
-              <button
-                onClick={handlePrevPage}
-                className="slider-button slider-button-prev"
-              >
-                Précédent
-              </button>
-              <button
-                onClick={handleNextPage}
-                className="slider-button slider-button-next"
-              >
-                Suivant
-              </button>
-            </div>
+              );
+            })}
           </div>
-        )}
-      </div>
+          <div className="slider-navigation">
+            <button
+              onClick={handlePrevPage}
+              className="slider-button slider-button-prev"
+            >
+              Précédent
+            </button>
+            <button
+              onClick={handleNextPage}
+              className="slider-button slider-button-next"
+            >
+              Suivant
+            </button>
+          </div>
+        </div>
+      ) : (
+        <p>Chargement des projets...</p>
+      )}
     </section>
   );
 };
