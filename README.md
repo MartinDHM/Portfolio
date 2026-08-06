@@ -1,41 +1,143 @@
-# Portfolio de Duhem Martin
-Bienvenue sur mon portfolio en ligne ! Vous pouvez explorer mes projets, compétences et expériences professionnelles ici.
+# 👋 Bienvenue sur mon Portfolio
 
-Aperçu
-Dans ce portfolio, vous trouverez une variété de projets que j'ai réalisés au fil des années. Ces projets couvrent différents domaines, notamment le développement web, la conception graphique, et bien plus encore.
+Bienvenue sur mon portfolio en ligne !
 
-Projets
-Projet 1 : Ohmyfood
-Description : Mon projet, nommé "OhMyFood", vise à regrouper les menus de restaurants gastronomiques et à proposer bien plus que une simple réservation. Les clients auront la liberté de personnaliser leur menu, et leurs plats seront prêts dès leur arrivée, éliminant ainsi les interminables attentes au restaurant 
-Lien vers le projet : https://github.com/MartinDHM/Ohmyfood
+Ce site rassemble une sélection de mes projets, de mes compétences et de mon parcours dans le développement web et l'intelligence artificielle. Chaque projet représente une opportunité d'apprendre de nouvelles technologies, de relever des défis techniques et de concevoir des expériences utilisateurs modernes.
 
-Projet 2 : Print-it
-Description : Ce projet a été créé dans le but de m'immerger dans le monde du langage JavaScript, une technologie extrêmement appréciée par la communauté des développeurs web. Il a été élaboré de manière très éducative, m'accompagnant dans mes premières explorations et m'aidant à maîtriser les fondements de ce langage dynamique
-Lien vers le projet : https://github.com/MartinDHM/Print-it
+🌐 **Portfolio :** https://portfolio-martin-duhem.vercel.app
 
-Projet 3 : ArchiWebos
-Description : J'ai eu la chance enthousiasmante d'être affecté en renfort au sein d'une équipe dédiée à la création du site portfolio d'une architecte d'intérieur de grand talent.
-Lien vers le projet : https://github.com/MartinDHM/ArchiWebos
+---
 
-Projet 4 : 724events
-Description : En tant que développeur front-end freelance, je suis sollicité par l'agence événementielle 724events pour une mission. Ils ont pour objectif de mettre en ligne la nouvelle version de leur site vitrine, qui est une page unique
-Lien vers le projet : https://github.com/MartinDHM/724events
+## 🚀 À propos
 
-Projet 5 : NinaCarducci
-Description : En tant que développeur freelance, je me lance dans l'offre de services d'optimisation SEO à de nouveaux clients. J'ai préalablement analysé plusieurs sites web et contacté les administrateurs des sites ayant un potentiel d'optimisation pour leur proposer mes services. Parmi mes prospects, se trouve le site de Nina Carducci, une photographe recommandée par un ami
-Lien vers le projet : https://github.com/MartinDHM/NinaCarducci
+Je suis **Développeur Web & AI Data Specialist**, passionné par la création d'applications modernes, performantes et intuitives.
 
-Projet 6 : Kasa-App
-Description : Je suis recruté en freelance par Kasa, un acteur majeur de la location d'appartements entre particuliers en France depuis près de 10 ans. Mon rôle consiste à développer leur nouvelle plateforme web, ce qui représente une excellente opportunité pour enrichir mon portfolio de freelance.
-Lien vers le projet :https://github.com/MartinDHM/Kasa-App
+Mon parcours m'a permis de développer des compétences aussi bien en **développement Front-end** qu'en **intelligence artificielle**, notamment dans l'évaluation de modèles LLM, l'annotation de données et le contrôle qualité.
 
-Projet 7 : ArgentBankApp
-Description : Je rejoins Argent Bank en tant que développeur front-end. C'est une nouvelle banque en ligne qui vise à se démarquer dans le secteur bancaire. En collaboration avec Mila, la cheffe de projet, je travaille sur la création du tableau de bord des utilisateurs. Nous recevons deux courriers électroniques du CTO, Avery Moreau
-Lien vers le projet : https://github.com/MartinDHM/ArgentBankApp
+À travers ce portfolio, je partage les projets qui m'ont permis de progresser techniquement tout en explorant différents univers : applications web, jeux vidéo, outils métiers et interfaces interactives.
+
+---
+
+## 🛠️ Technologies
+
+### Front-end
+
+- React
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- Tailwind CSS
+- Vite
 
 
-Comment me contacter
-Adresse e-mail : [martin.duhem1@gmail.com]
-N'hésitez pas à me contacter si vous avez des questions, des offres d'emploi ou des projets intéressants à discuter. Je suis ouvert à de nouvelles opportunités et collaborations.
+### Outils
 
-Merci de visiter mon portfolio !
+- Git
+- GitHub
+- Notion
+- Microsoft 365
+- Google Workspace
+
+---
+
+# 📂 Projets
+
+## 💬 Discord React
+
+Une application de messagerie inspirée de Discord développée avec React.
+
+### Fonctionnalités
+
+- Interface moderne
+- Gestion des salons
+- Composants React réutilisables
+- Responsive Design
+
+---
+
+## 💈 TM Barber
+
+Application de réservation en ligne permettant aux clients de prendre rendez-vous facilement chez un barber.
+
+### Fonctionnalités
+
+- Réservation de créneaux
+- Présentation des prestations
+- Interface responsive
+- Expérience utilisateur optimisée
+
+---
+
+## 🎮 KamehaMaisSpam
+
+Recréation d'un mini-jeu inspiré de **Dragon Ball Z: Budokai Tenkaichi 3**, développé avec Unity.
+
+Le site sert de plateforme officielle permettant de lancer le jeu directement dans le navigateur, découvrir son univers et accéder à ses différentes ressources.
+
+### Fonctionnalités
+
+- Intégration Unity WebGL
+- Présentation du jeu
+- Interface immersive
+- Responsive Design
+
+---
+
+## 🌍 Concours Pronos World Cup 2026
+
+Application permettant d'organiser un concours de pronostics entre amis durant la Coupe du Monde 2026.
+
+### Fonctionnalités
+
+- Pronostics des matchs
+- Arbre des phases finales
+- Classement des joueurs
+- Calcul automatique des points
+- Interface responsive
+
+---
+
+## 🕵️ Undercover Anime
+
+Une adaptation du célèbre jeu **Undercover** dans un univers inspiré des animes. Cette application web permet à un groupe d'amis de lancer rapidement une partie en choisissant le nombre de joueurs et le mode de jeu, le tout à travers une interface moderne et immersive.
+
+Le projet met l'accent sur l'expérience utilisateur avec un design inspiré des animes, des animations fluides et une navigation intuitive.
+
+### Fonctionnalités
+
+- 🎌 Univers graphique inspiré des animes
+- 👥 Configuration dynamique du nombre de joueurs
+- 😈 Mode **Imposteur Assisté**
+- 🤍 Mode **Mr.White**
+- 🎮 Interface moderne et responsive
+- ⚡ Expérience fluide développée avec React
+
+
+## 🎯 Objectif
+
+Ce portfolio reflète mon évolution en tant que développeur et ma volonté de créer des applications utiles, modernes et agréables à utiliser.
+
+Chaque projet est l'occasion d'expérimenter de nouvelles technologies, d'améliorer mes compétences et de relever des défis techniques.
+
+---
+
+## 📬 Me contacter
+
+Vous souhaitez échanger à propos d'un projet, d'une collaboration ou d'une opportunité professionnelle ?
+
+🌐 Portfolio  
+➡️ https://portfolio-martin-duhem.vercel.app
+
+📧 Email  
+➡️ martin.duhem1@gmail.com
+
+💼 GitHub  
+➡️ https://github.com/votre-profil
+
+---
+
+## ⭐ Merci !
+
+Merci d'avoir pris le temps de visiter mon portfolio.
+
+N'hésitez pas à explorer les différents projets et à me contacter si vous souhaitez échanger ou collaborer.
