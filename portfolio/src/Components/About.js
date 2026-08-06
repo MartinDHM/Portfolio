@@ -31,11 +31,11 @@ function AboutMe() {
         </p>
 
         <div className="about-actions">
-          <button className="primary-btn" onClick={scrollToContact}>
+          <button className="contact-submit-button" onClick={scrollToContact}>
             Me contacter
           </button>
 
-          <a href="#projects" className="secondary-btn">
+          <a href="#projects" className="contact-badge">
             Voir mes projets
           </a>
         </div>
