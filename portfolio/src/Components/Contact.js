@@ -2,97 +2,189 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 function Contact() {
-  const form = useRef();
-  const [isSent, setIsSent] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const form = useRef(null);
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    setIsLoading(true);
+  const [status, setStatus] = useState("idle");
+  // idle | loading | success | error
 
-    emailjs
-      .sendForm(
+  const sendEmail = async (event) => {
+    event.preventDefault();
+
+    if (!form.current || status === "loading") return;
+
+    setStatus("loading");
+
+    try {
+      await emailjs.sendForm(
         "service_5odzdhi",
         "template_e9n5ki5",
         form.current,
-        "9I4VmzwtkuzPraE8M"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setIsSent(true);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      )
-      .finally(() => {
-        setIsLoading(false);
-      });
+        "9I4VmzwtkuzPraE8M",
+      );
+
+      form.current.reset();
+      setStatus("success");
+    } catch (error) {
+      console.error("Erreur lors de l'envoi du message :", error);
+      setStatus("error");
+    }
   };
 
   return (
-    <section className="contact-container">
-      <div className="wave-container">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 320"
-          className="wave"
-        >
-          <path
-            fill="#2a2a2a"
-            fillOpacity="1"
-            d="M0,64L60,58.7C120,53,240,43,360,69.3C480,96,600,160,720,181.3C840,203,960,181,1080,181.3C1200,181,1320,203,1380,213.3L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
-          ></path>
-        </svg>
-      </div>
-      <div className="contact-form">
-        <h2>Contactez-moi</h2>
-        <div className="form-container">
-          {isLoading ? (
-            <div className="loading-container">
-              <p className="loading-message">Envoi en cours...</p>
-              <div className="loader"></div>
-            </div>
-          ) : isSent ? (
-            <p className="confirmation-message">
-              Votre message a été envoyé avec succès!
+    <section className="contact-section" id="contact">
+      <div className="contact-wrapper">
+        <div className="contact-heading">
+          <span className="contact-badge">Un projet en tête ?</span>
+
+          <h2>Contactez-moi</h2>
+
+          <p>
+            Parlons de votre projet web, de vos besoins en intelligence
+            artificielle ou d'une éventuelle collaboration.
+          </p>
+        </div>
+
+        <div className="contact-content">
+          <div className="contact-info-card">
+            <span className="contact-info-label">Travaillons ensemble</span>
+
+            <h3>Construisons une solution adaptée à vos besoins.</h3>
+
+            <p>
+              Je suis disponible pour des missions en développement web,
+              annotation de données, évaluation de modèles LLM et contrôle
+              qualité.
             </p>
-          ) : (
-            <form ref={form} onSubmit={sendEmail}>
-              <div className="form-group">
-                <label htmlFor="fullName">Nom :</label>
-                <input
-                  type="text"
-                  id="fullName"
-                  name="user_name"
-                  placeholder="Nom complet"
-                  required
-                />
+
+            <div className="contact-info-list">
+              <div className="contact-info-item">
+                <span className="contact-info-icon" aria-hidden="true">
+                  ✉
+                </span>
+
+                <div>
+                  <strong>E-mail</strong>
+                  <a href="mailto: martin.duhem1@gmail.com">
+                    martin.duhem1@gmail.com
+                  </a>
+                </div>
               </div>
-              <div className="form-group">
-                <label htmlFor="email_id">E-mail :</label>
-                <input
-                  type="email"
-                  id="email_id"
-                  name="user_email"
-                  placeholder="E-mail"
-                  required
-                />
+
+              <div className="contact-info-item">
+                <span className="contact-info-icon" aria-hidden="true">
+                  ↗
+                </span>
+
+                <div>
+                  <strong>Disponibilité</strong>
+                  <span>Télétravail ou présentiel</span>
+                </div>
               </div>
-              <div className="form-group">
-                <label htmlFor="message">Message :</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  placeholder="Message"
-                  required
-                ></textarea>
+            </div>
+          </div>
+
+          <div className="contact-form-card">
+            {status === "success" ? (
+              <div className="contact-status contact-success" role="status">
+                <div className="contact-status-icon" aria-hidden="true">
+                  ✓
+                </div>
+
+                <h3>Message envoyé</h3>
+
+                <p>
+                  Merci pour votre message. Je vous répondrai dès que possible.
+                </p>
+
+                <button
+                  type="button"
+                  className="contact-secondary-button"
+                  onClick={() => setStatus("idle")}
+                >
+                  Envoyer un autre message
+                </button>
               </div>
-              <input type="submit" value="Envoyer" className="contact-button" />
-            </form>
-          )}
+            ) : (
+              <form ref={form} onSubmit={sendEmail}>
+                <div className="contact-form-row">
+                  <div className="contact-form-group">
+                    <label htmlFor="fullName">Nom complet</label>
+
+                    <input
+                      type="text"
+                      id="fullName"
+                      name="user_name"
+                      placeholder="Votre nom"
+                      autoComplete="name"
+                      required
+                    />
+                  </div>
+
+                  <div className="contact-form-group">
+                    <label htmlFor="email">Adresse e-mail</label>
+
+                    <input
+                      type="email"
+                      id="email"
+                      name="user_email"
+                      placeholder="votre@email.com"
+                      autoComplete="email"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="contact-form-group">
+                  <label htmlFor="subject">Objet</label>
+
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="Développement web, projet IA..."
+                    required
+                  />
+                </div>
+
+                <div className="contact-form-group">
+                  <label htmlFor="message">Votre message</label>
+
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Présentez-moi votre projet ou votre besoin..."
+                    required
+                  />
+                </div>
+
+                {status === "error" && (
+                  <p className="contact-error-message" role="alert">
+                    Une erreur est survenue. Vérifiez votre connexion ou
+                    réessayez dans quelques instants.
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  className="contact-submit-button"
+                  disabled={status === "loading"}
+                >
+                  {status === "loading" ? (
+                    <>
+                      <span className="contact-loader" aria-hidden="true" />
+                      Envoi en cours...
+                    </>
+                  ) : (
+                    <>
+                      Envoyer le message
+                      <span aria-hidden="true">→</span>
+                    </>
+                  )}
+                </button>
+              </form>
+            )}
+          </div>
         </div>
       </div>
     </section>

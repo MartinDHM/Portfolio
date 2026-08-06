@@ -5,12 +5,16 @@ import projet12 from "../../assets/projet12.webp";
 import kameha from "../../assets/kameha.webp";
 import tmbarbe from "../../assets/tm.webp";
 import discordreact from "../../assets/DiscordReact.webp";
+import pronocdm from "../../assets/pronocdm.webp";
+import undercover from "../../assets/undercover.webp";
 
 const projectImages = {
   Portfolio: projet12,
   KamehaMaisSpam: kameha,
   TmBarber: tmbarbe,
   DiscordReact: discordreact,
+  PronoCDM: pronocdm,
+  Undercover: undercover,
 };
 
 const projectDescriptions = {
@@ -34,6 +38,16 @@ const projectDescriptions = {
       "Clone de Discord avec React, gestion de salons et messages en temps réel.",
     technologies: ["#React", "#NodeJS", "#Socket.IO", "#MySQL", "#Auth0"],
   },
+  PronoCDM: {
+    description:
+      "Creation d'un site de pronostics sportifs avec React et Node.js. Gestion des utilisateurs, des pronostics et des résultats.",
+    technologies: ["#React", "#JavaScript", "#CSS"],
+  },
+  Undercover: {
+    description:
+      "Creation du jeu Undercover, un jeu de société en ligne avec React et Node.js. Gestion des parties, des joueurs et des rôles.",
+    technologies: ["#React", "#JavaScript", "#CSS"],
+  },
 };
 
 const projectLinks = {
@@ -49,6 +63,12 @@ const projectLinks = {
   },
   DiscordReact: {
     github: "https://github.com/MartinDHM/DiscordRemake",
+  },
+  PronoCDM: {
+    github: "https://github.com/MartinDHM/PronoCDM",
+  },
+  Undercover: {
+    github: "https://github.com/MartinDHM/UndercoverAnime",
   },
 };
 

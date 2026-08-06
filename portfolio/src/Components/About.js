@@ -1,64 +1,84 @@
 import React from "react";
-import "../main.css"; // Importez le fichier CSS
+import "../main.css";
 
 function AboutMe() {
-  return (
-    <div className="about-me">
-      <Section title="Qui suis-je ?">
-        En tant que développeur Front-end, je suis animé par la création
-        d'interfaces web à la fois élégantes et performantes. Mon domaine
-        d'expertise couvre un large éventail de technologies, notamment React,
-        JavaScript, et bien d'autres. J'ai une affinité particulière pour la
-        conception d'expériences utilisateur qui soient à la fois fluides et
-        captivantes.
-      </Section>
-      <Section title="Mon Histoire">
-        Mon parcours m'a conduit récemment à embrasser le domaine du
-        développement web. Après avoir suivi avec enthousiasme la formation
-        d'Openclassroom, j'ai consolidé mes compétences dans le développement
-        Front-end. Auparavant, j'ai exploré d'autres domaines, mais c'est dans
-        la création web que j'ai trouvé ma véritable passion.
-      </Section>
-      <Section title="Ma Philosophie">
-        En matière de conception web, je suis un fervent défenseur de la
-        simplicité, de la convivialité et de l'accessibilité. Chaque site web
-        que je crée est conçu avec l'idée que la technologie devrait servir
-        l'humain. Mon objectif est de rendre chaque interaction en ligne aussi
-        fluide et agréable que possible, tout en garantissant une accessibilité
-        universelle.
-      </Section>
-      <Section title="Mes Compétences">
-        En tant que développeur Front-end, j'ai acquis des compétences
-        approfondies dans divers domaines, notamment React, JavaScript, HTML5,
-        CSS3, et bien d'autres. Je suis constamment en train d'apprendre et de
-        m'adapter aux dernières technologies pour offrir des solutions de
-        qualité à mes clients.
-      </Section>
-      <Section title="Ma Proposition">
-        Mon engagement est de créer des expériences web exceptionnelles pour mes
-        clients en utilisant des technologies Front-end modernes. Mon approche
-        s'adapte à chaque projet pour répondre aux besoins spécifiques. Qu'il
-        s'agisse de sites réactifs, de web apps interactives ou d'une
-        optimisation de l'expérience utilisateur, je m'engage à fournir des
-        solutions sur mesure.
-      </Section>
-      <Section title="Vous et moi">
-        Travaillons ensemble pour donner vie à vos idées et atteindre vos
-        objectifs en matière de développement web. Si vous avez un projet en
-        tête ou si vous cherchez un partenaire pour collaborer, n'hésitez pas à
-        me contacter. Je serais ravi de discuter de la manière dont nous pouvons
-        travailler ensemble pour concrétiser vos projets web.
-      </Section>
-    </div>
-  );
-}
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
 
-function Section({ title, children }) {
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
-    <div className="about-section">
-      <h2>{title}</h2>
-      <p>{children}</p>
-    </div>
+    <section className="about-me" id="about">
+      {/* Hero */}
+      <div className="about-hero">
+        <span className="about-badge">👋 À propos de moi</span>
+
+        <h1>
+          Développeur Web <span>&</span> AI Data Specialist
+        </h1>
+
+        <p className="about-intro">
+          Passionné par les technologies numériques, je combine une expertise en
+          <strong> développement web</strong> et en
+          <strong> intelligence artificielle</strong> pour créer des solutions
+          modernes, fiables et centrées sur les besoins des utilisateurs.
+        </p>
+
+        <div className="about-actions">
+          <button className="primary-btn" onClick={scrollToContact}>
+            Me contacter
+          </button>
+
+          <a href="#projects" className="secondary-btn">
+            Voir mes projets
+          </a>
+        </div>
+      </div>
+
+      {/* Cartes */}
+      <div className="about-grid">
+        <div className="about-card">
+          <h3>🚀 Mon parcours</h3>
+          <p>
+            J'ai commencé par le développement Front-end avant de me spécialiser
+            dans l'intelligence artificielle. Aujourd'hui, je mets ces deux
+            compétences au service de projets innovants, en combinant expérience
+            utilisateur, qualité des données et rigueur technique.
+          </p>
+        </div>
+
+        <div className="about-card">
+          <h3>💡 Ce que je fais</h3>
+
+          <ul>
+            <li>Développement Web (React, JavaScript, HTML, CSS)</li>
+            <li>Évaluation de modèles LLM</li>
+            <li>Annotation & validation de données</li>
+            <li>Prompt Engineering & Quality Assurance</li>
+          </ul>
+        </div>
+
+        <div className="about-card">
+          <h3>🤝 Travaillons ensemble</h3>
+
+          <p>
+            Vous recherchez un développeur web ou un AI Data Specialist capable
+            d'apporter une approche rigoureuse et orientée qualité ? Je serais
+            ravi d'échanger avec vous afin de concrétiser votre projet.
+          </p>
+
+          <button className="contact-btn" onClick={scrollToContact}>
+            Discutons de votre projet →
+          </button>
+        </div>
+      </div>
+    </section>
   );
 }
 
