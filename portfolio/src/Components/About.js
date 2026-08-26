@@ -12,6 +12,16 @@ function AboutMe() {
       });
     }
   };
+  const scrollToProjects = () => {
+    const githubprojectsSection = document.getElementById("github-projects");
+
+    if (githubprojectsSection) {
+      githubprojectsSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
 
   return (
     <section className="about-me" id="about">
@@ -35,9 +45,9 @@ function AboutMe() {
             Me contacter
           </button>
 
-          <a href="#projects" className="contact-badge">
-            Voir mes projets
-          </a>
+          <button className="projects-submit-button" onClick={scrollToProjects}>
+            Mes Projets
+          </button>
         </div>
       </div>
 
@@ -58,9 +68,10 @@ function AboutMe() {
 
           <ul>
             <li>Développement Web (React, JavaScript, HTML, CSS)</li>
-            <li>Évaluation de modèles LLM</li>
-            <li>Annotation & validation de données</li>
-            <li>Prompt Engineering & Quality Assurance</li>
+            <li>Tests, débogage et correction d’anomalies</li>
+            <li>Conception d’interfaces responsives et accessibles</li>
+            <li>Intégration d’API et gestion des données</li>
+            <li>Maintenance, optimisation et amélioration des performances</li>
           </ul>
         </div>
 

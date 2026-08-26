@@ -129,6 +129,6 @@ const ParticleContainer = () => {
       <div id="particles-js"></div>
     </div>
   );
-}
+};
 
 export default ParticleContainer;

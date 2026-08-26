@@ -26,16 +26,6 @@ function Accueil() {
                 interfaces web élégantes et performantes qui captivent
                 l'audience et améliorent l'expérience utilisateur.
               </p>
-              <Link
-                to="contact" // ID de la partie à faire défiler
-                spy={true}
-                smooth={true}
-                offset={-70} // Ajustez l'offset selon vos besoins
-                duration={500}
-                className="Contact-me"
-              >
-                Contactez-moi
-              </Link>
             </div>
           </div>
         </div>

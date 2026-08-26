@@ -121,7 +121,7 @@ const GitHubProjects = () => {
   };
 
   return (
-    <section className="projects-section">
+    <section className="projects-section" id="github-projects">
       <h2 className="projets-title">Mes Projets :</h2>
 
       {projectsGroups.length === 0 ? (

@@ -69,17 +69,6 @@ function Contact() {
                   </a>
                 </div>
               </div>
-
-              <div className="contact-info-item">
-                <span className="contact-info-icon" aria-hidden="true">
-                  ↗
-                </span>
-
-                <div>
-                  <strong>Disponibilité</strong>
-                  <span>Télétravail ou présentiel</span>
-                </div>
-              </div>
             </div>
           </div>
 

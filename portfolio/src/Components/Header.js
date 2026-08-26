@@ -27,7 +27,7 @@ function Header() {
               offset={-70} // Ajustez l'offset selon vos besoins
               duration={500}
             >
-              Portfolio
+              Projets
             </Link>
           </li>
           <li>
@@ -38,7 +38,7 @@ function Header() {
               offset={-70} // Ajustez l'offset selon vos besoins
               duration={500}
             >
-              About
+              À propos
             </Link>
           </li>
           <li>

@@ -376,7 +376,7 @@ BUTTONS
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
-  margin-top: 10px;
+  margin-top: 20px;
   padding: 8px 16px;
   border-radius: 999px;
   background: #ffffff;
@@ -459,7 +459,7 @@ BUTTONS
 .contact-info-list {
   display: grid;
   gap: 18px;
-  margin-top: auto;
+
   padding-top: 45px;
 }
 
@@ -571,6 +571,44 @@ BUTTONS
    BOUTON
 ========================= */
 
+.Contact-button {
+  margin-top: 35px;
+  padding: 12px 28px;
+
+  background: transparent;
+  color: #111;
+
+  border: 2px solid #111;
+  border-radius: 4px;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.Contact-button:hover {
+  background-color: #008000;
+  color: white;
+  border-color: #008000;
+
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 128, 0, 0.2);
+}
+
+.Contact-button:active {
+  transform: translateY(0);
+}
+
 .contact-submit-button,
 .contact-secondary-button {
   display: inline-flex;
@@ -607,6 +645,42 @@ BUTTONS
   opacity: 0.7;
 }
 
+.projects-submit-button {
+  align-self: flex-start;
+  border: 1px solid #111111;
+  background: white;
+  color: black;
+}
+
+.projects-submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #333333;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.17);
+}
+
+.projects-submit-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.projects-submit-button,
+.contact-secondary-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 13px 23px;
+  border-radius: 9px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
 .contact-secondary-button {
   border: 1px solid #d4d4d4;
   background: #ffffff;
@@ -616,6 +690,24 @@ BUTTONS
 .contact-secondary-button:hover {
   border-color: #111111;
   transform: translateY(-2px);
+}
+
+.contact-btn {
+  display: inline-flex;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 13px 23px;
+  border-radius: 9px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
 }
 
 /* =========================
